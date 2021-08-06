@@ -31,6 +31,15 @@
               {% endif %}
             </a>
           </li>
+          <!-- About -->
+          <li class="nav-item {% if page.title == 'CV' %}active{% endif %}">
+            <a class="nav-link" href="example_pdf.pdf">
+              CV
+              {% if page.title == "CV" %}
+                <span class="sr-only">(current)</span>
+              {% endif %}
+            </a>
+          </li>
           {% if site.blog_name %}
           <!-- Blog -->
           <li class="nav-item {% if page.url contains 'blog' %}active{% endif %}">

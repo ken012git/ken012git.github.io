@@ -2,7 +2,8 @@
 layout: about
 title: about
 permalink: /
-description:
+description: >
+Curriculum Vitae / Résumé
 
 profile:
   align: right

@@ -5,8 +5,8 @@ layout: default
 <div class="post">
 
   <header class="post-header">
-    <div style="height:300px;">
-      <img align="left" src="{{ page.profile.image | prepend: '/assets/img/' | relative_url }}" style="border:16px solid white; margin-top: -10px; margin-left: -20px;height:100%;">   
+    <div style="height:auto;">
+      <img align="left" src="{{ page.profile.image | prepend: '/assets/img/' | relative_url }}" style="border:16px solid white; margin-top: -10px; margin-left: -20px;max-width:35%; max-height:35%;">   
       <p class="desc">
         <h1>
           <span>{{ site.first_name }}</span> {{ site.middle_name }} {{ site.last_name }}
@@ -15,7 +15,7 @@ layout: default
       </p>
     </div>
   </header>
-
+  <br>
   <article>
     <h2>About me</h2>
     <div class="clearfix">

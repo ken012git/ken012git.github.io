@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-description: [<a href="https://drive.google.com/file/d/1z1wV1LnK9DNk2peXKLDt_ZZVpkkdrKKe/view">Curriculum Vitae</a>]
+description: <a href="https://drive.google.com/file/d/1z1wV1LnK9DNk2peXKLDt_ZZVpkkdrKKe/view">Curriculum Vitae</a>
 
 profile:
   align: right

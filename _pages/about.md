@@ -2,7 +2,9 @@
 layout: about
 title: about
 permalink: /
-description: <a href="https://drive.google.com/file/d/1z1wV1LnK9DNk2peXKLDt_ZZVpkkdrKKe/view">Curriculum Vitae</a>
+Affiliations: <a href="https://enyac.org/">EnyAC</a>
+description: >
+    <p>Affiliations: <a href="https://enyac.org/">EnyAC</a></p>
 
 profile:
   align: right

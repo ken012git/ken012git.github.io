@@ -33,6 +33,14 @@ layout: default
       {% include news.html %}
     {% endif %}
 
+    {% if page.education %}
+    {% include education.html %}
+    {% endif %}
+
+    {% if page.work_experience %}
+    {% include work_experience.html %}
+    {% endif %}
+
     {% if page.selected_papers %}
       {% include selected_papers.html %}
     {% endif %}

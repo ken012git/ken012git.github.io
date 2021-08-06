@@ -2,9 +2,12 @@
 layout: about
 title: about
 permalink: /
-Affiliations: <a href="https://enyac.org/">EnyAC</a>
 description: >
-    <p>Affiliations: <a href="https://enyac.org/">EnyAC</a></p>
+    [<a href="https://drive.google.com/file/d/1z1wV1LnK9DNk2peXKLDt_ZZVpkkdrKKe/view?usp=sharing">Curriculum Vitae</a>] [<a href="https://github.com/ken012git">Github</a>] [<a href="https://scholar.google.com/citations?user=2uTRM0MAAAAJ">Google Scholar</a>]
+    <br>
+    Email: hungyueh [dot] chiang [at] utexas [dot] edu
+    <br>
+    Affiliations: <a href="https://enyac.org/">EnyAC</a>
 
 profile:
   align: right

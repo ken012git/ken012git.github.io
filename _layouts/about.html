@@ -6,7 +6,7 @@ layout: default
 
   <header class="post-header">
     <div style="height:275px;">
-      <img align="right" src="{{ page.profile.image | prepend: '/assets/img/' | relative_url }}" style="border:16px solid white; margin-top: -10px; margin-left: -20px;max-width:35%; max-height:245px;">   
+      <img align="right" src="{{ page.profile.image | prepend: '/assets/img/' | relative_url }}" style="border:16px solid white; margin-top: -10px; margin-left: -20px;max-width:35%; max-height:300px;">   
       <p class="desc">
         <h1>
           <span>{{ site.first_name }}</span> {{ site.middle_name }} {{ site.last_name }}
@@ -16,8 +16,7 @@ layout: default
           <div class="contact-icons">
             {% include social.html %}
           </div>
-          <!-- <div class="contact-note">{{ site.contact_note }}</div> -->
-          <div class="contact-note">Best way to reach me via email.</div>
+          <div class="contact-note">{{ site.contact_note }}</div>
         </div>
       </p>
     </div>
@@ -28,19 +27,19 @@ layout: default
     <div class="clearfix">
       {{ content }}
     </div>
-
+    <br>
     {% if page.news %}
       {% include news.html %}
     {% endif %}
-
+    <br>
     {% if page.education %}
     {% include education.html %}
     {% endif %}
-
+    <br>
     {% if page.work_experience %}
     {% include work_experience.html %}
     {% endif %}
-
+    <br>
     {% if page.selected_papers %}
       {% include selected_papers.html %}
     {% endif %}

@@ -3,11 +3,10 @@ layout: about
 title: about
 permalink: /
 description: >
-    The University of Texas at Austin<br>
-    Electrical and Computer Engineering<br>
+    [<a href="https://drive.google.com/file/d/1Vt_7htqT1ei76__stnXhPPE8NVhugX7A/view?usp=sharing">Curriculum Vitae</a>] [<a href="https://drive.google.com/file/d/1UPhgpfZoWOzXWAG9wZubhO6iplX_3YEx/view?usp=sharing">Résumé</a>]<br>
     Affiliations: <a href="https://enyac.org/">EnyAC</a><br>
-    Email: hungyueh [dot] chiang [at] utexas [dot] edu<br>
-    [<a href="https://drive.google.com/file/d/1Vt_7htqT1ei76__stnXhPPE8NVhugX7A/view?usp=sharing">Curriculum Vitae</a>] [<a href="https://drive.google.com/file/d/1UPhgpfZoWOzXWAG9wZubhO6iplX_3YEx/view?usp=sharing">Résumé</a>] [<a href="https://github.com/ken012git">Github</a>] [<a href="https://scholar.google.com/citations?user=2uTRM0MAAAAJ">Google Scholar</a>]
+    Electrical and Computer Engineering<br>
+    The University of Texas at Austin<br>
 profile:
   align: right
   image: prof_pic-medium.webp

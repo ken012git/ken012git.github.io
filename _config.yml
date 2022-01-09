@@ -62,7 +62,7 @@ keybase_username: # your keybase user name
 wikidata_id: # your wikidata id
 dblp_url: # your DBLP profile url
 
-contact_note: Best way to reach me via email.
+contact_note: Best way to reach me via email. <br> I photograph visited places at <a href="https://www.instagram.com/hyc.footmark">Instagram</a>.
 
 google_analytics: UA-XXXXXXXXX # out your google-analytics code
 panelbear_analytics: XXXXXXXXX # panelbear analytics site ID
@@ -71,8 +71,8 @@ panelbear_analytics: XXXXXXXXX # panelbear analytics site ID
 # Blog
 # -----------------------------------------------------------------------------
 
-blog_name: # your blog must have a name for it to show up in the nav bar
-blog_description: a simple whitespace theme for academics
+blog_name: Blog # your blog must have a name for it to show up in the nav bar
+blog_description: Recent posts
 permalink: /blog/:year/:title/
 
 # Pagination
@@ -80,7 +80,7 @@ pagination:
   enabled: true
 
 # Comments
-disqus_shortname: Hung-Yueh # put your disqus shortname
+disqus_shortname: https-hychiang-info # put your disqus shortname
 # https://help.disqus.com/en/articles/1717111-what-s-a-shortname
 
 # -----------------------------------------------------------------------------

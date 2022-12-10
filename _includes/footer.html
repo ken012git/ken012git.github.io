@@ -1,35 +1,27 @@
-{% if site.footer_fixed %}
-<footer class="fixed-bottom">
-  <!-- https://clustrmaps.com/ -->
-  <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=190&t=tt&d=63L-AOUUXV7dNP9sE0J35-A9m9tVx4XT7qV2CT9AAC8&co=2d78ad&cmo=3acc3a&cmn=ff5353&ct=ffffff'></script>
-  <div class="container mt-0">
-    <center>
-      &copy; Copyright {{ site.time | date: '%Y' }} {{ site.first_name }} {{ site.middle_name }} {{ site.last_name }}.
-      {{ site.footer_text }}
-      {% if site.impressum_path %}
-      <a href="{{ site.url }}{{ site.baseurl }}{{ site.impressum_path }}">Impressum</a>.
-      {% endif %}
-      {% if site.last_updated %}
-      Last updated: {{ "now" | date: '%B %d, %Y' }}.
-      {% endif %}
-    </center>
-</div>
-</footer>
-{% else %}
-<footer class="sticky-bottom mt-5">
-  <!-- https://clustrmaps.com/ -->
-  <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=190&t=tt&d=63L-AOUUXV7dNP9sE0J35-A9m9tVx4XT7qV2CT9AAC8&co=2d78ad&cmo=3acc3a&cmn=ff5353&ct=ffffff'></script>
-  <div class="container">
-    <center>
-      &copy; Copyright {{ site.time | date: '%Y' }} {{ site.first_name }} {{ site.middle_name }} {{ site.last_name }}.
-      {{ site.footer_text }}
-      {% if site.impressum_path %}
-      <a href="{{ site.url }}{{ site.baseurl }}{{ site.impressum_path }}">Impressum</a>.
-      {% endif %}
-      {% if site.last_updated %}
-      Last updated: {{ "now" | date: '%B %d, %Y' }}.
-      {% endif %}
-    </center>
-  </div>
-</footer>
-{% endif %}
+    {% if site.footer_fixed %}
+    <footer class="fixed-bottom">
+      <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=190&t=tt&d=63L-AOUUXV7dNP9sE0J35-A9m9tVx4XT7qV2CT9AAC8&co=2d78ad&cmo=3acc3a&cmn=ff5353&ct=ffffff'></script>
+      <div class="container mt-0">
+        &copy; Copyright {{ site.time | date: '%Y' }} {{ site.first_name }} {{ site.middle_name }} {{ site.last_name }}. {{ site.footer_text }}
+        {%- if site.impressum_path -%}
+        <a href="{{ site.url }}{{ site.baseurl }}{{ site.impressum_path }}">Impressum</a>.
+        {%- endif -%}
+        {%- if site.last_updated -%}
+        Last updated: {{ "now" | date: '%B %d, %Y' }}.
+        {%- endif %}
+      </div>
+    </footer>
+    {%- else -%}
+    <footer class="sticky-bottom mt-5">
+      <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=190&t=tt&d=63L-AOUUXV7dNP9sE0J35-A9m9tVx4XT7qV2CT9AAC8&co=2d78ad&cmo=3acc3a&cmn=ff5353&ct=ffffff'></script>
+      <div class="container">
+        &copy; Copyright {{ site.time | date: '%Y' }} {{ site.first_name }} {{ site.middle_name }} {{ site.last_name }}. {{ site.footer_text }}
+        {%- if site.impressum_path -%}
+        <a href="{{ site.url }}{{ site.baseurl }}{{ site.impressum_path }}">Impressum</a>.
+        {%- endif -%}
+        {%- if site.last_updated -%}
+        Last updated: {{ "now" | date: '%B %d, %Y' }}.
+        {%- endif %}
+      </div>
+    </footer>
+    {%- endif %}

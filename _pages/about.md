@@ -2,19 +2,20 @@
 layout: about
 title: about
 permalink: /
-description: >
+# subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Moto. Etc.
+subtitle: >
     [<a href="https://drive.google.com/file/d/1Vt_7htqT1ei76__stnXhPPE8NVhugX7A/view?usp=sharing">Curriculum Vitae</a>] [<a href="https://drive.google.com/file/d/1UPhgpfZoWOzXWAG9wZubhO6iplX_3YEx/view?usp=sharing">Résumé</a>]<br>
     Affiliations: <a href="https://enyac.org/">EnyAC</a><br>
     Electrical and Computer Engineering<br>
     The University of Texas at Austin<br>
+
 profile:
   align: right
   image: prof_pic-medium.webp
+  image_circular: false # crops the image to make it circular
   address: >
 
 news: true  # includes a list of news items
-education: true # includes a list of education
-work_experience: true # includes a list of work experience
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---

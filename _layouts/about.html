@@ -2,56 +2,41 @@
 layout: default
 ---
 
-<div class="post">
-
-  <header class="post-header">
-    <div style="height:275px;">
-      <img align="right" src="{{ page.profile.image | prepend: '/assets/img/' | relative_url }}" style="border:16px solid white; margin-top: -10px; margin-left: -20px;max-width:35%; max-height:300px;">   
-      <p class="desc">
-        <h1>
-          <span>{{ site.first_name }}</span> {{ site.middle_name }} {{ site.last_name }} <span>{{ site.chinese_name }}</span>
-        </h1>
-        {{ page.description }}
-        <div class="social">
-          <div class="contact-icons">
-            {% include social.html %}
+<!-- about.html -->
+      <div class="post">
+        <header class="post-header">
+          <div style="height:275px;">
+            <img align="right" src="{{ page.profile.image | prepend: '/assets/img/' | relative_url }}" style="border:16px solid white; margin-top: -10px; margin-left: -20px;max-width:35%; max-height:300px;">   
+            <p class="desc">
+              <h1>
+                <span>{{ site.first_name }}</span> {{ site.middle_name }} {{ site.last_name }} <span>{{ site.chinese_name }}</span>
+              </h1>
+              <p class="desc">{{ page.subtitle }}</p>
+              <div class="social">
+                <div class="contact-icons">
+                  {% include social.html %}
+                </div>
+                <div class="contact-note">{{ site.contact_note }}</div>
+              </div>
+            </p>
           </div>
-          <div class="contact-note">{{ site.contact_note }}</div>
-        </div>
-      </p>
-    </div>
-  </header>
-  <br>
-  <article>
-    <h2>About me</h2>
-    <div class="clearfix">
-      {{ content }}
-    </div>
-    <br>
-    {% if page.news %}
-      {% include news.html %}
-    {% endif %}
-    <br>
-    {% if page.education %}
-    {% include education.html %}
-    {% endif %}
-    <br>
-    {% if page.work_experience %}
-    {% include work_experience.html %}
-    {% endif %}
-    <br>
-    {% if page.selected_papers %}
-      {% include selected_papers.html %}
-    {% endif %}
+        </header>
+        <br>
 
-    <!-- {% if page.social %}
-    <div class="social">
-      <div class="contact-icons">
-        {% include social.html %}
-      </div>
-      <div class="contact-note">{{ site.contact_note }}</div>
-    </div>
-    {% endif %} -->
-  </article>
+        <article>
+          <h2>About me</h2>
+          <div class="clearfix">
+            {{ content }}
+          </div>
+
+          {% if page.news -%}
+          <!-- News -->
+          {%- include news.html %}
+          {%- endif %}
+          {% if page.selected_papers -%}
+            <!-- Selected papers -->
+            {%- include selected_papers.html %}
+          {%- endif %}
+        </article>
 
 </div>

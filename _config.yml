@@ -3,14 +3,15 @@
 # -----------------------------------------------------------------------------
 
 title: Hung-Yueh Chiang # the website title (if blank, full name will be used instead)
-first_name: Hung-Yueh
+first_name: Hung-Yueh 
 middle_name:
-last_name: Chiang
+last_name: Chiang 
+chinese_name: 江泓樂
 email: hungyueh[dot]chiang[at]utexas[dot]edu
 description:
 footer_text:
 
-icon: # the emoji used as the favicon
+icon: UT # the emoji used as the favicon
 url: # the base hostname & protocol for your site
 baseurl: # the subpath of your site, e.g. /blog/
 last_updated: true # set to true if you want to display last updated in the footer
@@ -97,7 +98,7 @@ collections:
     output: true
     permalink: /projects/:path/
 
-news_limit: 3
+news_limit: 5
 
 # -----------------------------------------------------------------------------
 # Jekyll settings

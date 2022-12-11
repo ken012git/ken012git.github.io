@@ -15,8 +15,7 @@
             <!-- <abbr class="badge float-right" {% if venue_style %}{{venue_style}}{% endif %}><a href="{{site.data.venues[entry.abbr].url}}">{{entry.abbr}}</a></abbr> -->
             <abbr class="badge" {% if venue_style %}{{venue_style}}{% endif %}><a href="{{entry.venue_url}}">{{entry.abbr}}</a></abbr>
             {%- endif -%}
-            
-          </div>
+        </div>
         <div class="col-sm-2 preview">
           <a href="{{entry.pdf}}">
           {%- if entry.preview -%}

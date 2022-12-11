@@ -9,7 +9,8 @@ layout: default
             <img align="right" src="{{ page.profile.image | prepend: '/assets/img/' | relative_url }}" style="border:16px solid white; margin-top: -10px; margin-left: -20px;max-width:35%; max-height:300px;">   
             <p class="desc">
               <h1>
-                <span>{{ site.first_name }}</span> {{ site.middle_name }} {{ site.last_name }} <span>{{ site.chinese_name }}</span>
+                <span>{{ site.first_name }}</span> {{ site.middle_name }} {{ site.last_name }}
+                <span>{{ site.chinese_name }}</span>
               </h1>
               <p class="desc">{{ page.subtitle }}</p>
               <div class="social">
@@ -28,7 +29,7 @@ layout: default
           <div class="clearfix">
             {{ content }}
           </div>
-
+          <br>
           {% if page.news -%}
           <!-- News -->
           {%- include news.html %}

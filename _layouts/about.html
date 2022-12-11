@@ -33,6 +33,11 @@ layout: default
           <!-- News -->
           {%- include news.html %}
           {%- endif %}
+          <br>
+          {% if page.work_experience -%}
+          <!-- Work experience -->
+          {%- include work_experience.html %}
+          {%- endif %}
           {% if page.selected_papers -%}
             <!-- Selected papers -->
             {%- include selected_papers.html %}

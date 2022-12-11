@@ -1,6 +1,15 @@
-"AJP":
-  url: https://aapt.scitation.org/journal/ajp
+"AAAI":
+  # url: https://aaai.org/Conferences/AAAI-23/
   color: "#00369f"
 
-"PhysRev":
-  url: https://journals.aps.org/
+"ICCV":
+  # url: https://lpcv.ai/2021ICCV/program
+  color: "#00369f"
+
+"3DV":
+  # url: https://journals.aps.org/
+  color: "#00369f"
+
+# "arXiv":
+#   # url: https://journals.aps.org/
+#   color: "#00369f"

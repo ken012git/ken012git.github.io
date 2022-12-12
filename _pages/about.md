@@ -4,7 +4,7 @@ title: About
 permalink: /
 # subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Moto. Etc.
 subtitle: >
-    [<a href="https://drive.google.com/file/d/1Vt_7htqT1ei76__stnXhPPE8NVhugX7A/view?usp=sharing">Curriculum Vitae</a>] [<a href="https://drive.google.com/file/d/1UPhgpfZoWOzXWAG9wZubhO6iplX_3YEx/view?usp=sharing">Résumé</a>]<br>
+    [<a href="assets/pdf/Hung-Yueh-Chiang-CV-2023.pdf">Curriculum Vitae</a>] [<a href="assets/pdf/Hung-Yueh-Chiang-Resume-2023.pdf">Résumé</a>]<br>
     Affiliations: <a href="https://enyac.org/">EnyAC</a><br>
     Electrical and Computer Engineering<br>
     The University of Texas at Austin<br>

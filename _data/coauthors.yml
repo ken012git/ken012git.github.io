@@ -1,34 +1,18 @@
-"Adams":
-  - firstname: ["Edwin", "E.", "E. P.", "Edwin Plimpton"]
-    url: https://en.wikipedia.org/wiki/Edwin_Plimpton_Adams
-
-"Podolsky":
-  - firstname: ["Boris", "B.", "B. Y.", "Boris Yakovlevich"]
-    url: https://en.wikipedia.org/wiki/Boris_Podolsky
-
-"Rosen":
-  - firstname: ["Nathan", "N."]
-    url: https://en.wikipedia.org/wiki/Nathan_Rosen
-
-"Bach": 
-  - firstname: ["Johann Sebastian", "J. S."]
-    url: https://en.wikipedia.org/wiki/Johann_Sebastian_Bach
-
-  - firstname: ["Carl Philipp Emanuel", "C. P. E."]
-    url: https://en.wikipedia.org/wiki/Carl_Philipp_Emanuel_Bach
-
-"Przibram":
-  - firstname: ["Karl"]
-    url: https://link.springer.com/article/10.1007/s00016-019-00242-z
-
-"Schrödinger":
-  - firstname: ["Erwin"]
-    url: https://en.wikipedia.org/wiki/Erwin_Schr%C3%B6dinger
-
-"Lorentz":
-  - firstname: ["Hendrik Antoon"]
-    url: https://en.wikipedia.org/wiki/Hendrik_Lorentz
-
-"Planck":
-  - firstname: ["Max"]
-    url: https://en.wikipedia.org/wiki/Max_Planck
+"Marculescu":
+  - firstname: ["Diana"]
+    url: http://users.ece.utexas.edu/~dianam/
+"Liang":
+- firstname: ["Feng"]
+  url: https://jeff-liangf.github.io/
+"Hsu":
+  - firstname: ["Winston H", "Winston"]
+    url: https://winstonhsu.info/
+"Lin":
+  - firstname: ["Yen-Liang"]
+    url: https://sites.google.com/view/yenlianglin
+"Wu":
+  - firstname: ["Kai-Chiang"]
+    url: https://people.cs.nctu.edu.tw/~kcw/
+"Liu":
+  - firstname: ["Yueh-Cheng"]
+    url: https://liu115.github.io/

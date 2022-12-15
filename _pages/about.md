@@ -19,6 +19,7 @@ social: true  # includes social icons at the bottom of the page
 news: true  # includes a list of news items
 work_experience: true # includes a list of work experience
 selected_papers: true # includes a list of papers marked as "selected={true}"
+misc: true # includes a list of miscellaneous
 
 ---
 

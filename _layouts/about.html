@@ -43,6 +43,11 @@ layout: default
             <!-- Selected papers -->
             {%- include selected_papers.html %}
           {%- endif %}
+          <br>
+          {% if page.misc -%}
+          <!-- Work experience -->
+          {%- include misc.html %}
+          {%- endif %}
         </article>
 
 </div>

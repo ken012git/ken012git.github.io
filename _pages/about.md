@@ -17,6 +17,7 @@ profile:
 
 social: true  # includes social icons at the bottom of the page
 news: true  # includes a list of news items
+education: true # includes a list of education
 work_experience: true # includes a list of work experience
 selected_papers: true # includes a list of papers marked as "selected={true}"
 misc: true # includes a list of miscellaneous

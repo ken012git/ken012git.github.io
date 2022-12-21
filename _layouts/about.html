@@ -35,6 +35,11 @@ layout: default
           {%- include news.html %}
           {%- endif %}
           <br>
+          {% if page.education -%}
+          <!-- Work experience -->
+          {%- include education.html %}
+          {%- endif %}
+          <br>
           {% if page.work_experience -%}
           <!-- Work experience -->
           {%- include work_experience.html %}

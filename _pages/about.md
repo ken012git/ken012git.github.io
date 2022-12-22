@@ -6,7 +6,8 @@ permalink: /
 subtitle: >
     [<a href="assets/pdf/Hung-Yueh-Chiang-CV-2023.pdf">Curriculum Vitae</a>] [<a href="assets/pdf/Hung-Yueh-Chiang-Resume-2023.pdf">Résumé</a>]<br>
     Affiliations: <a href="https://enyac.org/">EnyAC</a><br>
-    Electrical and Computer Engineering<br>
+    Chandra Family Department of Electrical and Computer Engineering<br>
+    Cockrell School Engineering<br>
     The University of Texas at Austin<br>
 
 profile:

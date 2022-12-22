@@ -97,7 +97,10 @@ facebook_id: # your facebook id
 discord_id: # your discord id (18-digit unique numerical identifier)
 
 contact_note: >
-  Best way to reach me via email. <br> I photograph visited places at <a href="https://www.instagram.com/hyc.footmark">Instagram</a>.
+  Best way to reach me via email.
+
+# contact_note: >
+#   Best way to reach me via email. <br> I photograph visited places at <a href="https://www.instagram.com/hyc.footmark">Instagram</a>.
 
 # -----------------------------------------------------------------------------
 # Analytics and search engine verification

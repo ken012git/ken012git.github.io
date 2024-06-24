@@ -5,11 +5,12 @@ layout: default
 <!-- about.html -->
       <div class="post">
         <header class="post-header">
-          <div style="height:275px;">
+          <div class="clearfix">
             <img align="right" src="{{ page.profile.image | prepend: '/assets/img/' | relative_url }}" style="border:16px solid white; margin-top: -10px; margin-left: -20px;max-width:35%; max-height:300px;">   
             <p class="desc">
               <h1>
                 <span>{{ site.first_name }}</span> {{ site.middle_name }} {{ site.last_name }}
+                <br>
                 <span>{{ site.chinese_name }}</span>
               </h1>
               <p class="desc">{{ page.subtitle }}</p>

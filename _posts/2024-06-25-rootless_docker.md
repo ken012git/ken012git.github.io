@@ -14,14 +14,13 @@ Running docker usually requires root privileges. This document contains the root
 
 
 ## Step 1 Install uidmap (sudo required)
-Step 6 Install uidmap for Rootless Docker
 ```bash
 $ sudo apt-get install -y uidmap
 ```
 
 ## Step 2 Setup User group (sudo required)
 
-Follow the [document](https://rootlesscontaine.rs/getting-started/common/subuid/) to setup the user group. If `subuids` and `subgids` are not configured, you need to edit /etc/subuid and /etc/subgid directly with a text editor
+Follow the [document](https://rootlesscontaine.rs/getting-started/common/subuid/) to setup the user group. If `subuids` and `subgids` are not configured, you need to edit `/etc/subuid` and `/etc/subgid` directly with a text editor
 
 ```bash
 $ cat /etc/subuid

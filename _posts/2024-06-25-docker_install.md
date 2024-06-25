@@ -90,6 +90,32 @@ Follow the steps in NVIDIA Docker official document: https://docs.nvidia.com/dat
 $ sudo  docker run --rm --gpus all nvidia/cuda:11.0.3-base-ubuntu20.04 nvidia-smi
 ```
 
+# Troubleshooting
+
+
+### Error response from daemon
+
+```bash
+$ sudo  docker run --rm --gpus all nvidia/cuda:11.0.3-base-ubuntu20.04 nvidia-smi
+docker: Error response from daemon: could not select device driver "" with capabilities: [[gpu]].
+```
+
+This is the Snap issue, please follow step 1. [Reference](https://stackoverflow.com/questions/61876116/how-to-remove-a-snap-application-docker-completely).
+
+
+
+### Cannot connect to the Docker daemon
+```bash
+$ sudo docker run hello-world
+docker: Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?.
+See 'docker run --help'.
+```
+
+This is the permission issue after installing Docker from apt-get. For our machine, we could just restart the docker and test it after reboot. Please see step 3 and step 4. [Reference](https://stackoverflow.com/questions/44678725/cannot-connect-to-the-docker-daemon-at-unix-var-run-docker-sock-is-the-docker).
+
+
+
+
 
 # Reference:
 - [https://github.com/NVIDIA/nvidia-docker/issues/1447](https://github.com/NVIDIA/nvidia-docker/issues/1447)

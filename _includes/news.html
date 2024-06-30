@@ -9,15 +9,15 @@
               {% for item in news limit: news_size %} 
               {% if item.top %}
               <tr>
-                  <th scope="row">{{ item.date | date: "%b %-d, %Y" }}</th>
-                  <td>
-                    {% if item.inline -%} 
-                      {{ item.content | remove: '<p>' | remove: '</p>' | emojify }}
-                    {%- else -%} 
-                      <a class="news-title" href="{{ item.url | relative_url }}">{{ item.title }}</a>
-                    {%- endif %} 
-                  </td>
-                </tr>
+                <th scope="row">{{ item.date | date: "%b %-d, %Y" }}</th>
+                <td>
+                  {% if item.inline -%} 
+                    {{ item.content | remove: '<p>' | remove: '</p>' | emojify }}
+                  {%- else -%} 
+                    <a class="news-title" href="{{ item.url | relative_url }}">{{ item.title }}</a>
+                  {%- endif %} 
+                </td>
+              </tr>
               {% endif %}
               {%- endfor %} 
               {% if site.news_limit %}
@@ -28,15 +28,15 @@
               {% for item in news limit: news_limit %} 
                 {% if item.top == blank || item.top == false %}
                 <tr>
-                    <th scope="row">{{ item.date | date: "%b %-d, %Y" }}</th>
-                    <td>
-                      {% if item.inline -%} 
-                        {{ item.content | remove: '<p>' | remove: '</p>' | emojify }}
-                      {%- else -%} 
-                        <a class="news-title" href="{{ item.url | relative_url }}">{{ item.title }}</a>
-                      {%- endif %} 
-                    </td>
-                  </tr>
+                  <th scope="row">{{ item.date | date: "%b %-d, %Y" }}</th>
+                  <td>
+                    {% if item.inline -%} 
+                      {{ item.content | remove: '<p>' | remove: '</p>' | emojify }}
+                    {%- else -%} 
+                      <a class="news-title" href="{{ item.url | relative_url }}">{{ item.title }}</a>
+                    {%- endif %} 
+                  </td>
+                </tr>
                 {% endif %}
               {%- endfor %} 
               </table>

@@ -22,7 +22,7 @@ NVML library version: 550.54
 ```
 Check kernel message
 ```bash
-sudo dmesg
+$ sudo dmesg
 ...
 [ 1865.855970] NVRM: API mismatch: the client has the version 550.54.14, but
                NVRM: this kernel module has the version 545.23.08.  Please
@@ -292,7 +292,7 @@ $ sudo reboot
 ```
 
 <br>
-#### Step 7 (Optional) Keep the hernel version
+#### Step 7 (Optional) Keep the kernel version
 
 > [Warning]  
 > This will prevent the machine from some important updates

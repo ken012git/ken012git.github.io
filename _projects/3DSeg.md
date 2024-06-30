@@ -13,7 +13,7 @@ category: research
 <abbr class="badge" style="background-color:#00369f; margin-left:0.1rem; margin-right:0.1rem; font-size:1.1rem;">3DV 2019</abbr>
 </div>
 
-<div class="authors"> <a href="https://hychiang.info">Hung-Yueh Chiang</a><sup>1</sup>, Yen-Liang Lin<sup>2</sup>, <a href="https://liu115.github.io/">Yueh-Cheng Liu</a><sup>1</sup>, <a href="https://winstonhsu.info/">Winston H. Hsu</a><sup>1</sup></div>
+<div class="authors"> <a href="https://hychiang.info">Hung-Yueh Chiang</a><sup>1</sup>, <a href="https://sites.google.com/view/yenlianglin">Yen-Liang Lin</a><sup>2</sup>, <a href="https://liu115.github.io/">Yueh-Cheng Liu</a><sup>1</sup>, <a href="https://winstonhsu.info/">Winston H. Hsu</a><sup>1</sup></div>
 <div class="authors" style="padding-bottom: 0.5em;"><sup>1</sup>National Taiwan University
 <sup>2</sup>A9/Amazon</div>
 

@@ -14,7 +14,7 @@ category: research
 <abbr class="badge" style="background-color:#FF9B00; margin-left:0.1rem; margin-right:0.1rem; font-size:1.1rem;">Oral Paper</abbr>
 </div>
 
-<div class="authors"> <a href="https://hychiang.info">Hung-Yueh Chiang</a>, Natalia Frumkin, <a href="https://jeff-liangf.github.io/">Feng Liang</a>, <a href="https://users.ece.utexas.edu/~dianam/">Diana Marculescu</a></div>
+<div class="authors"> <a href="https://hychiang.info">Hung-Yueh Chiang</a>, <a href="https://www.nfrumkin.com/">Natalia Frumkin</a>, <a href="https://jeff-liangf.github.io/">Feng Liang</a>, <a href="https://users.ece.utexas.edu/~dianam/">Diana Marculescu</a></div>
 <div class="authors" style="padding-bottom: 0.5em;">The University of Texas at Austin</div>
 
 <div style="text-align: center; padding-bottom: 0.9em;">

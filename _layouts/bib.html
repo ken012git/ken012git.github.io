@@ -21,7 +21,7 @@
             <abbr class="badge" style="margin-left:0.1rem; margin-right:0.1rem"><a href="{{entry.venue_url}}">{{entry.venue_type}}</a></abbr>
             {%- if entry.accepted_type -%}
             <!-- defined in _data/venues.yaml -->
-            <abbr class="badge" style="background-color:#FF9B00; margin-left:0.1rem; margin-right:0.1rem">{{entry.accepted_type}}</a></abbr>
+            <abbr class="badge" style="background-color:#FF9B00; margin-left:0.1rem; margin-right:0.1rem">{{entry.accepted_type}}</abbr>
             {%- endif -%}
             {%- if site.data.venues[entry.abbr] -%}
               {%- assign venue_style = nil -%}

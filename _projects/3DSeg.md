@@ -45,7 +45,7 @@ category: research
     <ul style="font-size:1.2rem">
         <li>Normal describes object shapes</li>
         <li>Color shows object textures</li>
-        <li>Global scene prior is crucial for semantics</li>
+        <li><b>Global scene prior</b> is crucial for semantics, for example, discriminating <b>curtain</b> in living rooms and <b>shower curtain</b> in restrooms</li>
     </ul>
     </div>
     <div class="col-sm mt-3 mt-md-0">

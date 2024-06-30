@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="4.3.3">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml"/><link href="/" rel="alternate" type="text/html" hreflang="en"/><updated>2024-06-30T22:01:45+00:00</updated><id>/feed.xml</id><title type="html">blank</title><subtitle></subtitle><entry><title type="html">Install/Update CUDA on Ubuntu Machines</title><link href="/blog/2024/install_cuda/" rel="alternate" type="text/html" title="Install/Update CUDA on Ubuntu Machines"/><published>2024-06-30T00:00:00+00:00</published><updated>2024-06-30T00:00:00+00:00</updated><id>/blog/2024/install_cuda</id><content type="html" xml:base="/blog/2024/install_cuda/"><![CDATA[<h1 id="introduction">Introduction</h1> <p>This document contain the step to install/update CUDA on Ubuntu machines</p> <h1 id="installation">Installation</h1> <h4 id="step-1-download-cuda-from-nvidia-official-website-either-deb-local-deb-network-or-runfile-local-would-work">Step 1. Download cuda from NVIDIA official <a href="https://developer.nvidia.com/cuda-downloads">website</a>. Either Deb (local), deb (network), or runfile (local) would work.</h4> <p><br/></p> <div class="row"> <div class="col-sm mt-3 mt-md-0"> <figure> <picture> <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/posts/install_cuda/cuda-480.webp"/> <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/posts/install_cuda/cuda-800.webp"/> <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/posts/install_cuda/cuda-1400.webp"/> <img src="/assets/img/posts/install_cuda/cuda.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" title="example image" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"/> </picture> </figure> </div> </div> <p><br/></p> <h4 id="step-2-follow-the-instructions-on-the-nvidia-official-website-to-download-cuda">Step 2. Follow the instructions on the NVIDIA official website to download CUDA.</h4> <p><br/></p> <div class="row"> <div class="col-sm mt-3 mt-md-0"> <figure> <picture> <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/posts/install_cuda/install_cuda-480.webp"/> <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/posts/install_cuda/install_cuda-800.webp"/> <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/posts/install_cuda/install_cuda-1400.webp"/> <img src="/assets/img/posts/install_cuda/install_cuda.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" title="example image" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"/> </picture> </figure> </div> </div> <p><br/></p> <h4 id="step-3-reboot-the-machine">Step 3. Reboot the machine</h4> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>reboot
+</code></pre></div></div> <p><br/></p> <h4 id="step-4-check-system-cuda-after-reboot">Step 4. Check system cuda after reboot</h4> <p><br/></p> <div class="row"> <div class="col-sm mt-3 mt-md-0"> <figure> <picture> <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/posts/install_cuda/check_cuda-480.webp"/> <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/posts/install_cuda/check_cuda-800.webp"/> <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/posts/install_cuda/check_cuda-1400.webp"/> <img src="/assets/img/posts/install_cuda/check_cuda.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" title="example image" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"/> </picture> </figure> </div> </div> <p><br/></p> <h4 id="step-5-setup-the-environment-in-bashrc-please-see-the-official-document">Step 5. Setup the environment in ~/.bashrc. Please see the official <a href="https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#environment-setup">document</a>.</h4> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">### add cuda path in ~/.bashrc</span>
+<span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span>/usr/local/cuda/bin<span class="k">${</span><span class="nv">PATH</span>:+:<span class="k">${</span><span class="nv">PATH</span><span class="k">}}</span>
+<span class="nb">export </span><span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span>/usr/local/cuda/lib64<span class="k">${</span><span class="nv">LD_LIBRARY_PATH</span>:+:<span class="k">${</span><span class="nv">LD_LIBRARY_PATH</span><span class="k">}}</span>
+</code></pre></div></div> <p><br/></p> <h4 id="step-6-source-new-environment">Step 6. Source new environment</h4> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">source</span> ~/.bashrc
+</code></pre></div></div> <p><br/></p> <h4 id="step-7-test-driver">Step 7. Test driver</h4> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>nvidia-smi
+</code></pre></div></div> <p><br/></p> <div class="row"> <div class="col-sm mt-3 mt-md-0"> <figure> <picture> <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/posts/install_cuda/test_driver-480.webp"/> <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/posts/install_cuda/test_driver-800.webp"/> <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/posts/install_cuda/test_driver-1400.webp"/> <img src="/assets/img/posts/install_cuda/test_driver.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" title="example image" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"/> </picture> </figure> </div> </div> <p><br/></p> <h4 id="step-8-test-cuda-compiler">Step 8. Test cuda compiler</h4> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>nvcc <span class="nt">-V</span>
+</code></pre></div></div> <p><br/></p> <div class="row"> <div class="col-sm mt-3 mt-md-0"> <figure> <picture> <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/posts/install_cuda/test_cudnn-480.webp"/> <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/posts/install_cuda/test_cudnn-800.webp"/> <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/posts/install_cuda/test_cudnn-1400.webp"/> <img src="/assets/img/posts/install_cuda/test_cudnn.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" title="example image" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"/> </picture> </figure> </div> </div> <p><br/></p> <h1 id="reference">Reference:</h1> <ul> <li><a href="https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html">https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html</a></li> <li><a href="https://developer.nvidia.com/cuda-downloads">https://developer.nvidia.com/cuda-downloads</a></li> <li><a href="https://developer.nvidia.com/cuda-toolkit-archive">https://developer.nvidia.com/cuda-toolkit-archive</a></li> <li><a href="https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#environment-setup">https://docs.nvidia.com/cuda/cuda-installation-guide-linux/index.html#environment-setup</a></li> </ul>]]></content><author><name></name></author><category term="linux,"/><category term="ubuntu,"/><category term="nvidia,"/><category term="commands"/><summary type="html"><![CDATA[Install/Update CUDA on Ubuntu Machines]]></summary></entry><entry><title type="html">Install TigerVNC Server/Client on Ubuntu Machines</title><link href="/blog/2024/install_tigervnc/" rel="alternate" type="text/html" title="Install TigerVNC Server/Client on Ubuntu Machines"/><published>2024-06-30T00:00:00+00:00</published><updated>2024-06-30T00:00:00+00:00</updated><id>/blog/2024/install_tigervnc</id><content type="html" xml:base="/blog/2024/install_tigervnc/"><![CDATA[<h1 id="introduction">Introduction</h1> <p>TigerVNC is a client/server application that allows users to launch and interact with graphical applications on remote machines. TigerVNC provides the levels of performance necessary to run 3D and video applications, and it attempts to maintain a common look and feel and re-use components, where possible, across the various platforms that it supports.</p> <p><br/></p> <h1 id="install-and-setup-tigervnc-viewer-on-server">Install and Setup TigerVNC Viewer on Server</h1> <p><br/></p> <h4 id="step-1-install-tigervnc-server">Step 1. Install TigerVNC Server.</h4> <p>First of all, ssh to the server with administrator account with sudo privileges, and install the packages using the following commands on the server.</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>apt update
+<span class="nv">$ </span><span class="nb">sudo </span>apt <span class="nb">install </span>xfce4 xfce4-goodies
+<span class="nv">$ </span><span class="nb">sudo </span>apt <span class="nb">install </span>tightvncserver
+
+</code></pre></div></div> <p><br/></p> <h4 id="step-2-setup-tigervnc-server">Step 2. Setup TigerVNC Server</h4> <p>SSH to the server</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>ssh xxx@yyy.zzz
+</code></pre></div></div> <p>Configure VNC Server</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">mkdir</span> ~/.vnc
+<span class="nv">$ </span>vim ~/.vnc/xstartup
+</code></pre></div></div> <p>Copy the following command to your ~/.vnc/xstartup</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/bash</span>
+xrdb <span class="nv">$HOME</span>/.Xresources
+startxfce4 &amp;
+</code></pre></div></div> <p>The, add execution permission to ~/.vnc/xstartup</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">chmod</span> +x ~/.vnc/xstartup
+</code></pre></div></div> <p><br/></p> <h4 id="step-3-launch-vnc-server">Step 3. Launch VNC Server</h4> <p>To launch VNC server, run the command below:</p> <blockquote> <p>[Note]<br/> The password must be between six and eight characters long. Passwords more than 8 characters will be truncated automatically.</p> </blockquote> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># configure the resolution by -geometry</span>
+<span class="nv">$ </span>vncserver :1 <span class="nt">-geometry</span> 2560x1440
+Output
+You will require a password to access your desktops.
+
+Password:
+Verify:
+Would you like to enter a view-only password <span class="o">(</span>y/n<span class="o">)</span>? n
+xauth:  file /home/hc29225/.Xauthority does not exist
+
+New <span class="s1">'X'</span> desktop is borg:1
+
+Creating default startup script /home/hc29225/.vnc/xstartup
+Starting applications specified <span class="k">in</span> /home/hc29225/.vnc/xstartup
+Log file is /home/hc29225/.vnc/borg:1.log
+</code></pre></div></div> <p><br/></p> <h4 id="useful-commands">Useful commands</h4> <p>Note that if you ever want to change your password or add a view-only password, you can do so with the vncpasswd command:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>vncpasswd
+</code></pre></div></div> <p>To list current vncserver processes</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>vncserver <span class="nt">-list</span>
+</code></pre></div></div> <p>To kill the vncserver process on the remote</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>vncserver <span class="nt">-kill</span> :1
+</code></pre></div></div> <p><br/></p> <h1 id="install-and-setup-tigervnc-viewer-on-local">Install and Setup TigerVNC Viewer on Local</h1> <p><br/></p> <h4 id="step-1-install-tigervnc-viewer">Step 1. Install tigervnc-viewer</h4> <p>Please run the script to install tigervnc-viewer on your local machine. Note that you should have the sudo privilege of your machine or the machine is pre-installed with tigervnc-viewer.</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>apt <span class="nb">install </span>tigervnc-viewer
+</code></pre></div></div> <p><br/></p> <h4 id="step-2-setup-tigervnc-viewer-on-local">Step 2. Setup TigerVNC Viewer on Local</h4> <p>After installing the TigerVNC on the client, you should be able to find it in our machine. You will see the configuration window after clicking the TigerVNC Viewer.</p> <p><br/></p> <div class="row"> <div class="col-sm mt-3 mt-md-0"> <figure> <picture> <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/posts/tigervnc/tigervnc_local-480.webp"/> <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/posts/tigervnc/tigervnc_local-800.webp"/> <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/posts/tigervnc/tigervnc_local-1400.webp"/> <img src="/assets/img/posts/tigervnc/tigervnc_local.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" title="example image" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"/> </picture> </figure> </div> </div> <p><br/></p> <p><br/></p> <h4 id="step-3-connect-to-vnc-server">Step 3. Connect to VNC Server</h4> <p>Ssh to the server with port forwarding</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>ssh <span class="nt">-L</span> 59000:localhost:5901 <span class="nt">-C</span> <span class="nt">-N</span> <span class="nt">-l</span> account xxx.yyy.zzz
+</code></pre></div></div> <p>Or, you can configure your ~/.ssh/config like below then doing ssh</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># in your ~/.ssh/config</span>
+Host xxx
+    HostName xxx.yyy.zzz
+    User account
+    IdentityFile ~/.ssh/id_rsa
+    LocalForward 59000 localhost:5901
+<span class="c"># then, ssh to the server</span>
+<span class="nv">$ </span>ssh account@xxx
+</code></pre></div></div> <p>After ssh to the server in a terminal, Launch VNC Viewer and type in localhost:59000 and vnc password <br/></p> <div class="row"> <div class="col-sm mt-3 mt-md-0"> <figure> <picture> <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/posts/tigervnc/tigervnc_login-480.webp"/> <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/posts/tigervnc/tigervnc_login-800.webp"/> <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/posts/tigervnc/tigervnc_login-1400.webp"/> <img src="/assets/img/posts/tigervnc/tigervnc_login.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" title="example image" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"/> </picture> </figure> </div> </div> <p><br/> You should be able to see the graphical user interface once connected <br/></p> <div class="row"> <div class="col-sm mt-3 mt-md-0"> <figure> <picture> <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/posts/tigervnc/tigervnc_desktop-480.webp"/> <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/posts/tigervnc/tigervnc_desktop-800.webp"/> <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/posts/tigervnc/tigervnc_desktop-1400.webp"/> <img src="/assets/img/posts/tigervnc/tigervnc_desktop.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" title="example image" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"/> </picture> </figure> </div> </div> <p><br/></p> <p><br/></p> <h1 id="troubleshooting">Troubleshooting</h1> <p>The gray screen is forwarded by TigerVNC <br/></p> <div class="row"> <div class="col-sm mt-3 mt-md-0"> <figure> <picture> <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/posts/tigervnc/tigervnc_desktop_grey-480.webp"/> <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/posts/tigervnc/tigervnc_desktop_grey-800.webp"/> <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/posts/tigervnc/tigervnc_desktop_grey-1400.webp"/> <img src="/assets/img/posts/tigervnc/tigervnc_desktop_grey.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" title="example image" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"/> </picture> </figure> </div> </div> <p><br/></p> <p>Solution: Add executable permission ~/.vnc/xstartup on the server to fix this issue</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">chmod</span> +x ~/.vnc/xstartup
+</code></pre></div></div> <p><br/></p> <h1 id="reference">Reference:</h1> <ul> <li><a href="https://tigervnc.org/">https://tigervnc.org/</a></li> <li><a href="https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-vnc-on-ubuntu-22-04">https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-vnc-on-ubuntu-22-04</a></li> <li><a href="https://www.howtoforge.com/how-to-install-vnc-server-ubuntu-22-04/">https://www.howtoforge.com/how-to-install-vnc-server-ubuntu-22-04/</a></li> <li><a href="https://bytexd.com/how-to-install-configure-vnc-server-on-ubuntu/">https://bytexd.com/how-to-install-configure-vnc-server-on-ubuntu/</a></li> </ul>]]></content><author><name></name></author><category term="linux,"/><category term="ubuntu,"/><category term="commands"/><summary type="html"><![CDATA[Install TigerVNC Server/Client on Ubuntu Machines]]></summary></entry><entry><title type="html">NVML: Driver/library Version Mismatch</title><link href="/blog/2024/nvml_mismatch/" rel="alternate" type="text/html" title="NVML: Driver/library Version Mismatch"/><published>2024-06-30T00:00:00+00:00</published><updated>2024-06-30T00:00:00+00:00</updated><id>/blog/2024/nvml_mismatch</id><content type="html" xml:base="/blog/2024/nvml_mismatch/"><![CDATA[<h1 id="introduction">Introduction</h1> <p>The Ubuntu kernel and Nvidia driver will be updated automatically and sometimes cause driver mismatch issues on the system. This document shows how to solve the Nvidia driver mismatch problem on a Ubuntu OS.</p> <blockquote> <p>[TL;DR]<br/> The first thing you need to try is rebooting the machine!</p> </blockquote> <p>If rebooting does not work for your case, please try the following steps.</p> <h1 id="issue">Issue</h1> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>nvidia-smi
+Failed to initialize NVML: Driver/library version mismatch
+NVML library version: 550.54
+</code></pre></div></div> <p>Check kernel message</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>dmesg
+...
+<span class="o">[</span> 1865.855970] NVRM: API mismatch: the client has the version 550.54.14, but
+               NVRM: this kernel module has the version 545.23.08.  Please
+               NVRM: make sure that this kernel module and all NVIDIA driver
+               NVRM: components have the same version.
+...
+</code></pre></div></div> <h1 id="solution">Solution</h1> <p><br/></p> <h4 id="step-1-check-system-driver-and-process-driver">Step 1. Check system driver and process driver</h4> <ul> <li>The current running driver is <code class="language-plaintext highlighter-rouge">545.23.08</code> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cat</span> /proc/driver/nvidia/version
+NVRM version: NVIDIA UNIX x86_64 Kernel Module  545.23.08  Mon Nov  6 23:49:37 UTC 2023
+GCC version:  gcc version 11.4.0 <span class="o">(</span>Ubuntu 11.4.0-1ubuntu1~22.04<span class="o">)</span> 
+</code></pre></div> </div> </li> <li>The system driver in the Dynamic Kernel Module is <code class="language-plaintext highlighter-rouge">545.23.08</code> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>dkms status
+nvidia/545.23.08, 5.15.0-94-generic, x86_64: installed
+nvidia/545.23.08, 5.15.0-97-generic, x86_64: installed
+<span class="nv">$ </span>modinfo nvidia | <span class="nb">grep</span> ^version
+version:        545.23.08
+</code></pre></div> </div> </li> </ul> <p><br/></p> <h4 id="step-2-check-available-drivers">Step 2. Check available drivers</h4> <p><code class="language-plaintext highlighter-rouge">nvidia-driver-550 - third-party non-free recommended</code> is the recommended driver.</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>ubuntu-drivers devices
+<span class="o">==</span> /sys/devices/pci0000:00/0000:00:01.1/0000:01:00.0 <span class="o">==</span>
+modalias : pci:v000010DEd00002231sv000010DEsd0000147Ebc03sc00i00
+vendor   : NVIDIA Corporation
+model    : GA102GL <span class="o">[</span>RTX A5000]
+manual_install: True
+driver   : nvidia-driver-535-server-open - third-party non-free
+driver   : nvidia-driver-525-server - third-party non-free
+driver   : nvidia-driver-535-server - third-party non-free
+driver   : nvidia-driver-545-open - third-party non-free
+driver   : nvidia-driver-470-server - third-party non-free
+driver   : nvidia-driver-535-open - third-party non-free
+driver   : nvidia-driver-525-open - third-party non-free
+driver   : nvidia-driver-550-open - third-party non-free
+driver   : nvidia-driver-550 - third-party non-free recommended
+driver   : xserver-xorg-video-nouveau - distro free <span class="nb">builtin</span>
+</code></pre></div></div> <p><br/></p> <h4 id="step-3-try-to-install-the-recommended-driver-first">Step 3. Try to install the recommended driver first</h4> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>apt <span class="nb">install </span>nvidia-driver-550 nvidia-dkms-550
+</code></pre></div></div> <p><br/></p> <h4 id="step-4-solving-the-error-trying-to-overwrite">Step 4. Solving the error: trying to overwrite</h4> <p>If you get this error</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Unpacking libnvidia-gl-550:amd64 <span class="o">(</span>550.54.14-0ubuntu1<span class="o">)</span> ...
+dpkg: error processing archive /var/cache/apt/archives/libnvidia-gl-550_550.54.14-0ubuntu1_amd64.deb <span class="o">(</span><span class="nt">--unpack</span><span class="o">)</span>:
+ trying to overwrite <span class="s1">'/usr/lib/x86_64-linux-gnu/libnvidia-api.so.1'</span>, which is also <span class="k">in </span>package libnvidia-extra-545:amd64 545.23.08-0ubuntu1
+dpkg-deb: error: <span class="nb">paste </span>subprocess was killed by signal <span class="o">(</span>Broken pipe<span class="o">)</span>
+Errors were encountered <span class="k">while </span>processing:
+</code></pre></div></div> <p>Try to force install the driver. There will be an error at the end of the message, but this should be fine.</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>dpkg <span class="nt">-i</span> <span class="nt">--force-overwrite</span> /var/cache/apt/archives/libnvidia-gl-550_550.54.14-0ubuntu1_amd64.deb 
+<span class="o">(</span>Reading database ... 292518 files and directories currently installed.<span class="o">)</span>
+Preparing to unpack .../libnvidia-gl-550_550.54.14-0ubuntu1_amd64.deb ...
+dpkg-query: no packages found matching libnvidia-gl-535
+Unpacking libnvidia-gl-550:amd64 <span class="o">(</span>550.54.14-0ubuntu1<span class="o">)</span> ...
+dpkg: warning: overriding problem because <span class="nt">--force</span> enabled:
+dpkg: warning: trying to overwrite <span class="s1">'/usr/lib/x86_64-linux-gnu/libnvidia-api.so.1'</span>, which is also <span class="k">in </span>package libnvidia-extra-545:amd64 545.23.08-0ubuntu1
+dpkg: dependency problems prevent configuration of libnvidia-gl-550:amd64:
+ libnvidia-gl-550:amd64 depends on libnvidia-common-550<span class="p">;</span> however:
+  Package libnvidia-common-550 is not configured yet.
+ libnvidia-gl-550:amd64 depends on libnvidia-compute-550 <span class="o">(&gt;=</span> 550.54.14<span class="o">)</span><span class="p">;</span> however:
+  Package libnvidia-compute-550:amd64 is not configured yet.
+
+dpkg: error processing package libnvidia-gl-550:amd64 <span class="o">(</span><span class="nt">--install</span><span class="o">)</span>:
+ dependency problems - leaving unconfigured
+Processing triggers <span class="k">for </span>libc-bin <span class="o">(</span>2.35-0ubuntu3.6<span class="o">)</span> ...
+Errors were encountered <span class="k">while </span>processing:
+ libnvidia-gl-550:amd64
+</code></pre></div></div> <p>Then, fix the broken dependency.</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">(</span>base<span class="o">)</span> lab-admin@hopper:~<span class="nv">$ </span><span class="nb">sudo </span>apt <span class="nt">--fix-broken</span> <span class="nb">install</span>
+....
+depmod...
+Setting up libnvidia-encode-550:amd64 <span class="o">(</span>550.54.14-0ubuntu1<span class="o">)</span> ...
+Setting up nvidia-driver-550 <span class="o">(</span>550.54.14-0ubuntu1<span class="o">)</span> ...
+Setting up cuda-drivers-550 <span class="o">(</span>550.54.14-1<span class="o">)</span> ...
+Setting up cuda-drivers <span class="o">(</span>550.54.14-1<span class="o">)</span> ...
+Processing triggers <span class="k">for </span>libc-bin <span class="o">(</span>2.35-0ubuntu3.6<span class="o">)</span> ...
+Processing triggers <span class="k">for </span>man-db <span class="o">(</span>2.10.2-1<span class="o">)</span> ...
+Processing triggers <span class="k">for </span>initramfs-tools <span class="o">(</span>0.140ubuntu13.4<span class="o">)</span> ...
+update-initramfs: Generating /boot/initrd.img-5.15.0-97-generic
+W: Possible missing firmware /lib/firmware/ast_dp501_fw.bin <span class="k">for </span>module ast
+Package profile updates
+        status: 1
+        updates: <span class="o">[]</span>
+        exceptions: 
+        
+needrestart is being skipped since dpkg has failed
+</code></pre></div></div> <p>Check the recommended driver is fixed</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">(</span>base<span class="o">)</span> lab-admin@hopper:~<span class="nv">$ </span><span class="nb">sudo </span>apt <span class="nt">--fix-broken</span> <span class="nb">install </span>nvidia-driver-550 nvidia-dkms-550
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+nvidia-dkms-550 is already the newest version <span class="o">(</span>550.54.14-0ubuntu1<span class="o">)</span><span class="nb">.</span>
+nvidia-dkms-550 <span class="nb">set </span>to manually installed.
+nvidia-driver-550 is already the newest version <span class="o">(</span>550.54.14-0ubuntu1<span class="o">)</span><span class="nb">.</span>
+nvidia-driver-550 <span class="nb">set </span>to manually installed.
+The following packages were automatically installed and are no longer required:
+  libwmf0.2-7 nsight-compute-2023.3.0
+Use <span class="s1">'sudo apt autoremove'</span> to remove them.
+0 upgraded, 0 newly installed, 0 to remove and 4 not upgraded.
+</code></pre></div></div> <p>But now if you try the driver, it will show the same error. (Not sure if we restart the machine now will fix it)</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>nvidia-smi
+Failed to initialize NVML: Driver/library version mismatch
+NVML library version: 550.54
+</code></pre></div></div> <p><br/></p> <h4 id="step-5-purge-all-nvidia-drivers-and-re-install">Step 5. Purge all nvidia drivers and re-install</h4> <p>We will continue to purge all nvidia drivers first and re-install it again to keep our system environment simple. As you can see, there are lots of drivers in the system, for example nvidia-dkms-xxx</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>dpkg <span class="nt">-l</span> | <span class="nb">grep </span>nvidia
+ii  libnvidia-cfg1-550:amd64                          550.54.14-0ubuntu1                      amd64        NVIDIA binary OpenGL/GLX configuration library
+ii  libnvidia-common-550                              550.54.14-0ubuntu1                      all          Shared files used by the NVIDIA libraries
+rc  libnvidia-compute-515:amd64                       515.105.01-0ubuntu0.22.04.1             amd64        NVIDIA libcompute package
+rc  libnvidia-compute-515-server:amd64                515.65.01-0ubuntu0.22.04.1              amd64        NVIDIA libcompute package
+rc  libnvidia-compute-530:amd64                       530.30.02-0ubuntu1                      amd64        NVIDIA libcompute package
+rc  libnvidia-compute-545:amd64                       545.23.08-0ubuntu1                      amd64        NVIDIA libcompute package
+ii  libnvidia-compute-550:amd64                       550.54.14-0ubuntu1                      amd64        NVIDIA libcompute package
+ii  libnvidia-container-tools                         1.14.5-1                                amd64        NVIDIA container runtime library <span class="o">(</span>command-line tools<span class="o">)</span>
+ii  libnvidia-container1:amd64                        1.14.5-1                                amd64        NVIDIA container runtime library
+ii  libnvidia-decode-550:amd64                        550.54.14-0ubuntu1                      amd64        NVIDIA Video Decoding runtime libraries
+ii  libnvidia-encode-550:amd64                        550.54.14-0ubuntu1                      amd64        NVENC Video Encoding runtime library
+ii  libnvidia-extra-550:amd64                         550.54.14-0ubuntu1                      amd64        Extra libraries <span class="k">for </span>the NVIDIA driver
+ii  libnvidia-fbc1-550:amd64                          550.54.14-0ubuntu1                      amd64        NVIDIA OpenGL-based Framebuffer Capture runtime library
+ii  libnvidia-gl-550:amd64                            550.54.14-0ubuntu1                      amd64        NVIDIA OpenGL/GLX/EGL/GLES GLVND libraries and Vulkan ICD
+rc  linux-modules-nvidia-515-server-5.15.0-47-generic 5.15.0-47.51                            amd64        Linux kernel nvidia modules <span class="k">for </span>version 5.15.0-47
+rc  linux-objects-nvidia-515-server-5.15.0-47-generic 5.15.0-47.51                            amd64        Linux kernel nvidia modules <span class="k">for </span>version 5.15.0-47 <span class="o">(</span>objects<span class="o">)</span>
+rc  nvidia-compute-utils-515                          515.105.01-0ubuntu0.22.04.1             amd64        NVIDIA compute utilities
+rc  nvidia-compute-utils-515-server                   515.65.01-0ubuntu0.22.04.1              amd64        NVIDIA compute utilities
+rc  nvidia-compute-utils-530                          530.30.02-0ubuntu1                      amd64        NVIDIA compute utilities
+rc  nvidia-compute-utils-545                          545.23.08-0ubuntu1                      amd64        NVIDIA compute utilities
+ii  nvidia-compute-utils-550                          550.54.14-0ubuntu1                      amd64        NVIDIA compute utilities
+ii  nvidia-container-toolkit                          1.14.5-1                                amd64        NVIDIA Container toolkit
+ii  nvidia-container-toolkit-base                     1.14.5-1                                amd64        NVIDIA Container Toolkit Base
+rc  nvidia-cuda-toolkit                               11.5.1-1ubuntu1                         amd64        NVIDIA CUDA development toolkit
+rc  nvidia-dkms-515                                   515.105.01-0ubuntu0.22.04.1             amd64        NVIDIA DKMS package
+rc  nvidia-dkms-530                                   530.30.02-0ubuntu1                      amd64        NVIDIA DKMS package
+rc  nvidia-dkms-545                                   545.23.08-0ubuntu1                      amd64        NVIDIA DKMS package
+ii  nvidia-dkms-550                                   550.54.14-0ubuntu1                      amd64        NVIDIA DKMS package
+ii  nvidia-docker2                                    2.13.0-1                                all          nvidia-docker CLI wrapper
+ii  nvidia-driver-550                                 550.54.14-0ubuntu1                      amd64        NVIDIA driver metapackage
+ii  nvidia-firmware-550-550.54.14                     550.54.14-0ubuntu1                      amd64        Firmware files used by the kernel module
+rc  nvidia-kernel-common-515                          515.105.01-0ubuntu0.22.04.1             amd64        Shared files used with the kernel module
+rc  nvidia-kernel-common-515-server                   515.65.01-0ubuntu0.22.04.1              amd64        Shared files used with the kernel module
+rc  nvidia-kernel-common-530                          530.30.02-0ubuntu1                      amd64        Shared files used with the kernel module
+rc  nvidia-kernel-common-545                          545.23.08-0ubuntu1                      amd64        Shared files used with the kernel module
+ii  nvidia-kernel-common-550                          550.54.14-0ubuntu1                      amd64        Shared files used with the kernel module
+ii  nvidia-kernel-source-550                          550.54.14-0ubuntu1                      amd64        NVIDIA kernel <span class="nb">source </span>package
+ii  nvidia-modprobe                                   545.23.08-0ubuntu1                      amd64        Load the NVIDIA kernel driver and create device files
+ii  nvidia-prime                                      0.8.17.1                                all          Tools to <span class="nb">enable </span>NVIDIA<span class="s1">'s Prime
+ii  nvidia-settings                                   545.23.08-0ubuntu1                      amd64        Tool for configuring the NVIDIA graphics driver
+ii  nvidia-utils-550                                  550.54.14-0ubuntu1                      amd64        NVIDIA driver support binaries
+ii  screen-resolution-extra                           0.18.2                                  all          Extension for the nvidia-settings control panel
+ii  xserver-xorg-video-nvidia-550                     550.54.14-0ubuntu1                      amd64        NVIDIA binary Xorg driver
+</span></code></pre></div></div> <p>Remove all nvidia related packages.</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>apt <span class="nt">--purge</span> remove <span class="k">*</span>nvidia<span class="k">*</span>
+
+The following packages were automatically installed and are no longer required:
+  dctrl-tools dkms libgdk-pixbuf-xlib-2.0-0 libgdk-pixbuf2.0-0 libwmf0.2-7 nsight-compute-2023.3.0 pkg-config screen-resolution-extra
+Use <span class="s1">'sudo apt autoremove'</span> to remove them.
+The following packages will be REMOVED:
+  cuda<span class="k">*</span> cuda-12-3<span class="k">*</span> cuda-demo-suite-12-3<span class="k">*</span> cuda-drivers<span class="k">*</span> cuda-drivers-550<span class="k">*</span> cuda-runtime-12-3<span class="k">*</span> libnvidia-cfg1-550<span class="k">*</span> libnvidia-common-550<span class="k">*</span>
+  libnvidia-compute-515<span class="k">*</span> libnvidia-compute-515-server<span class="k">*</span> libnvidia-compute-530<span class="k">*</span> libnvidia-compute-545<span class="k">*</span> libnvidia-compute-550<span class="k">*</span>
+  libnvidia-container-tools<span class="k">*</span> libnvidia-container1<span class="k">*</span> libnvidia-decode-550<span class="k">*</span> libnvidia-encode-550<span class="k">*</span> libnvidia-extra-550<span class="k">*</span> libnvidia-fbc1-550<span class="k">*</span>
+  libnvidia-gl-550<span class="k">*</span> linux-modules-nvidia-515-server-5.15.0-47-generic<span class="k">*</span> linux-objects-nvidia-515-server-5.15.0-47-generic<span class="k">*</span>
+  nvidia-compute-utils-515<span class="k">*</span> nvidia-compute-utils-515-server<span class="k">*</span> nvidia-compute-utils-530<span class="k">*</span> nvidia-compute-utils-545<span class="k">*</span> nvidia-compute-utils-550<span class="k">*</span>
+  nvidia-container-toolkit<span class="k">*</span> nvidia-container-toolkit-base<span class="k">*</span> nvidia-cuda-toolkit<span class="k">*</span> nvidia-dkms-515<span class="k">*</span> nvidia-dkms-530<span class="k">*</span> nvidia-dkms-545<span class="k">*</span>
+  nvidia-dkms-550<span class="k">*</span> nvidia-docker2<span class="k">*</span> nvidia-driver-550<span class="k">*</span> nvidia-firmware-550-550.54.14<span class="k">*</span> nvidia-kernel-common-515<span class="k">*</span> nvidia-kernel-common-515-server<span class="k">*</span>
+  nvidia-kernel-common-530<span class="k">*</span> nvidia-kernel-common-545<span class="k">*</span> nvidia-kernel-common-550<span class="k">*</span> nvidia-kernel-source-550<span class="k">*</span> nvidia-modprobe<span class="k">*</span> nvidia-prime<span class="k">*</span>
+  nvidia-settings<span class="k">*</span> nvidia-utils-550<span class="k">*</span> xserver-xorg-video-nvidia-550<span class="k">*</span>
+0 upgraded, 0 newly installed, 48 to remove and 2 not upgraded.
+After this operation, 751 MB disk space will be freed.
+Do you want to <span class="k">continue</span>? <span class="o">[</span>Y/n]  Y
+</code></pre></div></div> <p>Check the environment again to make sure there is no NVIDIA related packages</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>dpkg <span class="nt">-l</span> | <span class="nb">grep </span>nvidia
+ii  screen-resolution-extra                    0.18.2                                  all          Extension <span class="k">for </span>the nvidia-settings control panel
+</code></pre></div></div> <p><br/></p> <h4 id="step-6-re-install-the-recommended-driver">Step 6. Re-install the recommended driver</h4> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>apt <span class="nb">install </span>nvidia-driver-550 nvidia-dkms-550
+</code></pre></div></div> <p>Check the environment again after the recommended driver is installed.</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>dpkg <span class="nt">-l</span> | <span class="nb">grep </span>nvidia
+ii  libnvidia-cfg1-550:amd64                   550.54.14-0ubuntu1                      amd64        NVIDIA binary OpenGL/GLX configuration library
+ii  libnvidia-common-550                       550.54.14-0ubuntu1                      all          Shared files used by the NVIDIA libraries
+ii  libnvidia-compute-550:amd64                550.54.14-0ubuntu1                      amd64        NVIDIA libcompute package
+ii  libnvidia-decode-550:amd64                 550.54.14-0ubuntu1                      amd64        NVIDIA Video Decoding runtime libraries
+ii  libnvidia-encode-550:amd64                 550.54.14-0ubuntu1                      amd64        NVENC Video Encoding runtime library
+ii  libnvidia-extra-550:amd64                  550.54.14-0ubuntu1                      amd64        Extra libraries <span class="k">for </span>the NVIDIA driver
+ii  libnvidia-fbc1-550:amd64                   550.54.14-0ubuntu1                      amd64        NVIDIA OpenGL-based Framebuffer Capture runtime library
+ii  libnvidia-gl-550:amd64                     550.54.14-0ubuntu1                      amd64        NVIDIA OpenGL/GLX/EGL/GLES GLVND libraries and Vulkan ICD
+ii  nvidia-compute-utils-550                   550.54.14-0ubuntu1                      amd64        NVIDIA compute utilities
+ii  nvidia-dkms-550                            550.54.14-0ubuntu1                      amd64        NVIDIA DKMS package
+ii  nvidia-driver-550                          550.54.14-0ubuntu1                      amd64        NVIDIA driver metapackage
+ii  nvidia-firmware-550-550.54.14              550.54.14-0ubuntu1                      amd64        Firmware files used by the kernel module
+ii  nvidia-kernel-common-550                   550.54.14-0ubuntu1                      amd64        Shared files used with the kernel module
+ii  nvidia-kernel-source-550                   550.54.14-0ubuntu1                      amd64        NVIDIA kernel <span class="nb">source </span>package
+ii  nvidia-prime                               0.8.17.1                                all          Tools to <span class="nb">enable </span>NVIDIA<span class="s1">'s Prime
+ii  nvidia-settings                            550.54.14-0ubuntu1                      amd64        Tool for configuring the NVIDIA graphics driver
+ii  nvidia-utils-550                           550.54.14-0ubuntu1                      amd64        NVIDIA driver support binaries
+ii  screen-resolution-extra                    0.18.2                                  all          Extension for the nvidia-settings control panel
+ii  xserver-xorg-video-nvidia-550              550.54.14-0ubuntu1                      amd64        NVIDIA binary Xorg driver
+</span></code></pre></div></div> <p>But now if you try the driver, it will show the same error. We need to reboot the machine first to reload the driver.</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>nvidia-smi
+Failed to initialize NVML: Driver/library version mismatch
+NVML library version: 550.54
+</code></pre></div></div> <p>Reboot</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>reboot
+</code></pre></div></div> <p><br/></p> <h4 id="step-7-optional-keep-the-kernel-version">Step 7 (Optional) Keep the kernel version</h4> <blockquote> <p>[Warning]<br/> This will prevent the machine from some important updates</p> </blockquote> <p>If we want to keep the version and prevent this happening again, we could use</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="sb">`</span>apt-mark hold<span class="sb">`</span> 
+<span class="nv">$ </span><span class="nb">sudo </span>apt-mark hold nvidia-dkms-550: 
+nvidia-dkms-550 <span class="nb">set </span>on hold.
+<span class="nv">$ </span><span class="nb">sudo </span>apt-mark hold nvidia-driver-550
+nvidia-driver-550 <span class="nb">set </span>on hold.
+<span class="nv">$ </span><span class="nb">sudo </span>apt-mark hold nvidia-utils-550
+nvidia-utils-550 <span class="nb">set </span>on hold.
+<span class="nv">$ </span><span class="nb">uname</span> <span class="nt">-r</span>
+5.15.0-97-generic
+<span class="nv">$ </span><span class="nb">sudo </span>apt-mark hold 5.15.0-97-generic <span class="c"># hold the kernel</span>
+</code></pre></div></div> <h1 id="reference">Reference:</h1> <ul> <li><a href="https://stackoverflow.com/questions/74151409/nvidia-nvml-driver-library-version-mismatch-dkms-modules-drivers-and-modinfo">https://stackoverflow.com/questions/74151409/nvidia-nvml-driver-library-version-mismatch-dkms-modules-drivers-and-modinfo</a></li> <li><a href="https://stackoverflow.com/questions/43022843/nvidia-nvml-driver-library-version-mismatch/67105064#67105064">https://stackoverflow.com/questions/43022843/nvidia-nvml-driver-library-version-mismatch/67105064#67105064</a></li> <li><a href="https://forums.developer.nvidia.com/t/problem-with-apt-and-nvidia-440-on-ubuntu-20-04/115281/2">https://forums.developer.nvidia.com/t/problem-with-apt-and-nvidia-440-on-ubuntu-20-04/115281/2</a></li> <li><a href="https://askubuntu.com/questions/1436506/how-to-resolve-unmet-dependencies-error-when-upgrading-depends-nvidia-kernel-c">https://askubuntu.com/questions/1436506/how-to-resolve-unmet-dependencies-error-when-upgrading-depends-nvidia-kernel-c</a></li> <li><a href="https://askubuntu.com/questions/938494/how-to-i-prevent-ubuntu-from-kernel-version-upgrade-and-notification">https://askubuntu.com/questions/938494/how-to-i-prevent-ubuntu-from-kernel-version-upgrade-and-notification</a></li> </ul>]]></content><author><name></name></author><category term="linux,"/><category term="ubuntu,"/><category term="nvidia,"/><category term="commands"/><summary type="html"><![CDATA[Solving NVML: Driver/library Version Mismatch]]></summary></entry><entry><title type="html">Distributed Training with Pytorch</title><link href="/blog/2024/pytorch_distributed_training/" rel="alternate" type="text/html" title="Distributed Training with Pytorch"/><published>2024-06-30T00:00:00+00:00</published><updated>2024-06-30T00:00:00+00:00</updated><id>/blog/2024/pytorch_distributed_training</id><content type="html" xml:base="/blog/2024/pytorch_distributed_training/"><![CDATA[<h1 id="introduction">Introduction</h1> <p>Distributed training is necessary for large models training tasks such as neural architecture search supernet, diffusion model or large language models. This document contains the steps to configure machines and launch distributed training tasks with Pytorch framework on GPU servers.</p> <p><br/></p> <h1 id="server-configuration">Server Configuration</h1> <h4 id="step-1-disable-firewall-and-ipv6">Step 1 Disable firewall and IPV6</h4> <blockquote> <p>[WARNING] This step may expose the machines under certain threats and attacks.</p> </blockquote> <p>Disable firewall</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>ufw status
+Status: active
+<span class="nv">$ </span><span class="nb">sudo </span>ufw disable
+<span class="nv">$ </span><span class="nb">sudo </span>ufw status
+Status: inactive
+</code></pre></div></div> <p>Disable IPV6:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>sysctl <span class="nt">-w</span> net.ipv6.conf.all.disable_ipv6<span class="o">=</span>1
+<span class="nv">$ </span><span class="nb">sudo </span>sysctl <span class="nt">-w</span> net.ipv6.conf.default.disable_ipv6<span class="o">=</span>1
+</code></pre></div></div> <h4 id="step-2-export-nccl-socket">Step 2. Export NCCL SOCKET</h4> <p>Some of our machines do not use the default <strong>eth0</strong>, so we have to configure the <code class="language-plaintext highlighter-rouge">NCCL_SOCKET_IFNAME</code> correctly on <strong>all</strong> the machines.</p> <p>To check the socket name.</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>ifconfig     
+docker0: <span class="nv">flags</span><span class="o">=</span>4099&lt;UP,BROADCAST,MULTICAST&gt;  mtu 1500                            
+        inet xx.xx.xx.xx  netmask 255.255.0.0  broadcast xx.xx.xx.xx          
+        ether 02:42:fe:49:77:fe  txqueuelen 0  <span class="o">(</span>Ethernet<span class="o">)</span>                        
+        RX packets 0  bytes 0 <span class="o">(</span>0.0 B<span class="o">)</span>                                            
+        RX errors 0  dropped 0  overruns 0  frame 0                              
+        TX packets 0  bytes 0 <span class="o">(</span>0.0 B<span class="o">)</span>                                            
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0               
+                                                                                 
+eno1: <span class="nv">flags</span><span class="o">=</span>4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;  mtu 1500                       
+        inet xx.xx.123.214  netmask 255.255.255.192  broadcast xx.xx.xx.xx   
+        ether 3c:ec:ef:05:1f:ca  txqueuelen 1000  <span class="o">(</span>Ethernet<span class="o">)</span>                     
+        RX packets 478564990  bytes 700182821494 <span class="o">(</span>700.1 GB<span class="o">)</span>                      
+        RX errors 0  dropped 6  overruns 2135  frame 0                           
+        TX packets 880702  bytes 274251519 <span class="o">(</span>274.2 MB<span class="o">)</span>                            
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0               
+        device memory 0xc1320000-c133ffff                                        
+                                                                                 
+eno2: <span class="nv">flags</span><span class="o">=</span>4163&lt;UP,BROADCAST,RUNNING,MULTICAST&gt;  mtu 1500                       
+        inet xx.xx.123.215  netmask 255.255.255.192  broadcast xx.xx.xx.xx  
+        ether 3c:ec:ef:05:1f:cb  txqueuelen 1000  <span class="o">(</span>Ethernet<span class="o">)</span>                     
+        RX packets 136141633  bytes 187956572012 <span class="o">(</span>187.9 GB<span class="o">)</span>                      
+        RX errors 0  dropped 6  overruns 2335  frame 0                           
+        TX packets 178699579  bytes 168433035752 <span class="o">(</span>168.4 GB<span class="o">)</span>                      
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0               
+        device memory 0xc1300000-c131ffff         
+</code></pre></div></div> <p>Install <code class="language-plaintext highlighter-rouge">net-tools</code> if you see the error</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Command <span class="s1">'ifconfig'</span> not found, but can be installed with:
+apt <span class="nb">install </span>net-tools
+Please ask your administrator.
+</code></pre></div></div> <p>Export the corresponding socket name</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Both eno1 and eno2 should work.</span>
+<span class="nv">$ </span><span class="nb">export </span><span class="nv">NCCL_SOCKET_IFNAME</span><span class="o">=</span>eno2
+</code></pre></div></div> <p><br/></p> <h4 id="step-3-launch-distributed-training">Step 3. Launch Distributed Training</h4> <p>Get the IP addresses of the machines in the cluster. Note that the ip address should match the NCCL_SOCKET_IFNAME that we export. For example:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lovelace: xx.xx.120.112
+hopper: xx.xx.121.104
+borg: xx.xx.122.109
+johnson: xx.xx.123.214
+allen: xx.xx.124.214
+</code></pre></div></div> <p><br/></p> <h4 id="step-4-run-training-scripts">Step 4. Run training scripts</h4> <p>Lei Mao wrote a good <a href="https://leimao.github.io/blog/PyTorch-Distributed-Training/">toy example</a> where we could start with. Here we use 2 machines (–nnodes) as an example. In each node, 4 GPUs (–nproc-per-node) will be used. Therefore, the world size is 8 (8 GPUs in total).</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Host: (--node-rank 0)</span>
+torchrun <span class="nt">--nnodes</span><span class="o">=</span>2 <span class="nt">--nproc-per-node</span><span class="o">=</span>4 <span class="nt">--node-rank</span><span class="o">=</span>0 <span class="se">\</span>
+        <span class="nt">--rdzv-id</span><span class="o">=</span>456 <span class="nt">--rdzv-backend</span><span class="o">=</span>c10d   <span class="se">\</span>
+        <span class="nt">--rdzv-endpoint</span><span class="o">=</span>xx.xx.120.112:29500 <span class="se">\</span>
+        train.py <span class="nt">--param1</span> xxx <span class="nt">--param2</span> yyy …
+</code></pre></div></div> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Client: (--node-rank 1)</span>
+torchrun <span class="nt">--nnodes</span><span class="o">=</span>2 <span class="nt">--nproc-per-node</span><span class="o">=</span>4 <span class="nt">--node-rank</span><span class="o">=</span>1 <span class="se">\</span>
+        <span class="nt">--rdzv-id</span><span class="o">=</span>456 <span class="nt">--rdzv-backend</span><span class="o">=</span>c10d   <span class="se">\</span>
+        <span class="nt">--rdzv-endpoint</span><span class="o">=</span>xx.xx.120.112:29500 <span class="se">\ </span>       
+        train.py <span class="nt">--param1</span> xxx <span class="nt">--param2</span> yyy …
+
+</code></pre></div></div> <p><br/></p> <h1 id="network-bandwidth">Network Bandwidth</h1> <p>Pytorch relies on the Internet connection to pass the updated weights. Therefore, a high bandwidth machine that serves as the master will speed up the training.</p> <p>Test Bandwidth without sudo</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>curl <span class="nt">-s</span> https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -
+...
+...
+Testing download speed................................................................................
+Download: 88.85 Mbit/s
+Testing upload speed......................................................................................................
+Upload: 11.87 Mbit/s
+</code></pre></div></div> <p>Test Bandwidth with sudo privilege With sudo privilege, we can test a specific network interface, for example enp194s0f0</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>ethtool enp194s0f0 | <span class="nb">grep</span> <span class="nt">-i</span> speed
+        Speed: 10000Mb/s
+</code></pre></div></div> <p><br/></p> <h4 id="bandwidth-monitoring-tools">Bandwidth Monitoring Tools</h4> <p>Bmon is a good internet bandwidth monitoring tool. Use the command: <code class="language-plaintext highlighter-rouge">sudo apt install bmon</code> to install the tool. More tools are available here.</p> <p>Here is a snapshot of the distributed training. The weights are passing through the enp194s0f1.</p> <div class="row"> <div class="col-sm mt-3 mt-md-0"> <figure> <picture> <source class="responsive-img-srcset" media="(max-width: 480px)" srcset="/assets/img/posts/pytorch_distributed_training/bandwidth-480.webp"/> <source class="responsive-img-srcset" media="(max-width: 800px)" srcset="/assets/img/posts/pytorch_distributed_training/bandwidth-800.webp"/> <source class="responsive-img-srcset" media="(max-width: 1400px)" srcset="/assets/img/posts/pytorch_distributed_training/bandwidth-1400.webp"/> <img src="/assets/img/posts/pytorch_distributed_training/bandwidth.png" class="img-fluid rounded z-depth-1" width="auto" height="auto" title="example image" onerror="this.onerror=null; $('.responsive-img-srcset').remove();"/> </picture> </figure> </div> </div> <p><br/></p> <h1 id="troubleshooting">Troubleshooting</h1> <p><br/></p> <h4 id="hostname-not-known-issue">Hostname not known <a href="https://github.com/pytorch/pytorch/issues/74824#issuecomment-1500144250">Issue</a></h4> <p>Error message:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>W socket.cpp:601] <span class="o">[</span>c10d] The IPv6 network addresses of <span class="o">(</span>ece-a58489.austin.utexas.edu, 44685<span class="o">)</span> cannot be retrieved <span class="o">(</span>gai error: <span class="nt">-2</span> - Name or service not known<span class="o">)</span><span class="nb">.</span>
+</code></pre></div></div> <p>Solution: add hostname and ip to /etc/hosts. It requires sudo privileges.</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cat</span> /etc/hosts
+127.0.0.1 localhost
+127.0.1.1 ece-a55028
+xx.xx.120.112 ece-a58489.yyy.zzz <span class="c"># add ip for lovelace</span>
+
+<span class="c"># The following lines are desirable for IPv6 capable hosts</span>
+::1     ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+</code></pre></div></div> <p><br/></p> <h4 id="debugging">Debugging</h4> <p>To dump more information for debugging the distributed training, we have to export a few environment variables.</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">export </span><span class="nv">NCCL_DEBUG</span><span class="o">=</span>INFO
+<span class="nv">$ </span><span class="nb">export </span><span class="nv">TORCH_CPP_LOG_LEVEL</span><span class="o">=</span>INFO
+<span class="nv">$ </span><span class="nb">export </span><span class="nv">TORCH_DISTRIBUTED_DEBUG</span><span class="o">=</span>INFO
+</code></pre></div></div> <p>Debugging message:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>I debug.cpp:49] <span class="o">[</span>c10d] The debug level is <span class="nb">set </span>to INFO.                                                                                                                       
+master_addr is only used <span class="k">for </span>static rdzv_backend and when rdzv_endpoint is not specified.                                                                                     
+WARNING:torch.distributed.run:                                                                                                                                                
+<span class="k">*****************************************</span>                                                                                                                                     
+Setting OMP_NUM_THREADS environment variable <span class="k">for </span>each process to be 1 <span class="k">in </span>default, to avoid your system being overloaded, please further tune the variable <span class="k">for </span>optimal performa
+nce <span class="k">in </span>your application as needed.                                                                                                                                            
+<span class="k">*****************************************</span>                                                                                                                                     
+<span class="o">[</span>I socket.cpp:624] <span class="o">[</span>c10d - debug] The client socket will attempt to connect to an IPv6 address of <span class="o">(</span>10.157.244.213, 29500<span class="o">)</span><span class="nb">.</span>                                                    
+<span class="o">[</span>I socket.cpp:787] <span class="o">[</span>c10d] The client socket has connected to <span class="o">[</span>allen.ece.utexas.edu]:29500 on <span class="o">[</span>johnson.ece.utexas.edu]:46672.                                                  
+<span class="o">[</span>I socket.cpp:624] <span class="o">[</span>c10d - debug] The client socket will attempt to connect to an IPv6 address of <span class="o">(</span>10.157.244.213, 29500<span class="o">)</span><span class="nb">.</span>                                                    
+<span class="o">[</span>I socket.cpp:787] <span class="o">[</span>c10d] The client socket has connected to <span class="o">[</span>allen.ece.utexas.edu]:29500 on <span class="o">[</span>johnson.ece.utexas.edu]:46682.                                                  
+<span class="o">[</span>I debug.cpp:49] <span class="o">[</span>c10d] The debug level is <span class="nb">set </span>to INFO.                                                                                                                       
+<span class="o">[</span>I debug.cpp:49] <span class="o">[</span>c10d] The debug level is <span class="nb">set </span>to INFO.                                                                                                                       
+<span class="o">[</span>I debug.cpp:49] <span class="o">[</span>c10d] The debug level is <span class="nb">set </span>to INFO.                                                                                                                       
+<span class="o">[</span>I debug.cpp:49] <span class="o">[</span>c10d] The debug level is <span class="nb">set </span>to INFO.                                                                                                                       
+<span class="o">[</span>I debug.cpp:49] <span class="o">[</span>c10d] The debug level is <span class="nb">set </span>to INFO.                                                                                                                       
+<span class="o">[</span>I debug.cpp:49] <span class="o">[</span>c10d] The debug level is <span class="nb">set </span>to INFO.                                                                                                                       
+<span class="o">[</span>I debug.cpp:49] <span class="o">[</span>c10d] The debug level is <span class="nb">set </span>to INFO.                                                                                                                       
+<span class="o">[</span>I debug.cpp:49] <span class="o">[</span>c10d] The debug level is <span class="nb">set </span>to INFO.                                                                                                                       
+2023-10-09 23:39:49.119410: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions <span class="k">in </span>performance-critical
+ operations.                                                                                                                                                                  
+To <span class="nb">enable </span>the following instructions: AVX2 FMA, <span class="k">in </span>other operations, rebuild TensorFlow with the appropriate compiler flags.                                                  
+2023-10-09 23:39:49.170222: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions <span class="k">in </span>performance-critical
+ operations.                                                                                                                                                                  
+To <span class="nb">enable </span>the following instructions: AVX2 FMA, <span class="k">in </span>other operations, rebuild TensorFlow with the appropriate compiler flags.                                                  
+2023-10-09 23:39:49.170405: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions <span class="k">in </span>performance-critical
+ operations.                                                                                                                                                                  
+To <span class="nb">enable </span>the following instructions: AVX2 FMA, <span class="k">in </span>other operations, rebuild TensorFlow with the appropriate compiler flags.                                                  
+2023-10-09 23:39:49.170545: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions <span class="k">in </span>performance-critical
+ operations.                                                                                                                                                                  
+To <span class="nb">enable </span>the following instructions: AVX2 FMA, <span class="k">in </span>other operations, rebuild TensorFlow with the appropriate compiler flags.                                                  
+2023-10-09 23:39:49.851032: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT                                         <span class="o">[</span>488/1839]
+2023-10-09 23:39:49.855787: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+2023-10-09 23:39:49.965667: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+| distributed init <span class="o">(</span>world_size 24, global rank 20, <span class="nb">local </span>gpu <span class="nb">id </span>4<span class="o">)</span>: <span class="nb">env</span>://
+<span class="o">[</span>I socket.cpp:624] <span class="o">[</span>c10d - debug] The client socket will attempt to connect to an IPv6 address of <span class="o">(</span>allen.local, 32927<span class="o">)</span><span class="nb">.</span>
+<span class="o">[</span>I socket.cpp:787] <span class="o">[</span>c10d] The client socket has connected to <span class="o">[</span>allen.ece.utexas.edu]:32927 on <span class="o">[</span>johnson.ece.utexas.edu]:35816.
+| distributed init <span class="o">(</span>world_size 24, global rank 18, <span class="nb">local </span>gpu <span class="nb">id </span>2<span class="o">)</span>: <span class="nb">env</span>://
+<span class="o">[</span>I socket.cpp:624] <span class="o">[</span>c10d - debug] The client socket will attempt to connect to an IPv6 address of <span class="o">(</span>allen.local, 32927<span class="o">)</span><span class="nb">.</span>
+<span class="o">[</span>I socket.cpp:787] <span class="o">[</span>c10d] The client socket has connected to <span class="o">[</span>allen.ece.utexas.edu]:32927 on <span class="o">[</span>johnson.ece.utexas.edu]:35822.
+<span class="o">[</span>I socket.cpp:624] <span class="o">[</span>c10d - debug] The client socket will attempt to connect to an IPv6 address of <span class="o">(</span>allen.local, 32927<span class="o">)</span><span class="nb">.</span>
+<span class="o">[</span>I socket.cpp:787] <span class="o">[</span>c10d] The client socket has connected to <span class="o">[</span>allen.ece.utexas.edu]:32927 on <span class="o">[</span>johnson.ece.utexas.edu]:35834.
+<span class="o">[</span>I ProcessGroupNCCL.cpp:665] <span class="o">[</span>Rank 20] ProcessGroupNCCL initialized with following options:
+NCCL_ASYNC_ERROR_HANDLING: 1
+NCCL_DESYNC_DEBUG: 0
+NCCL_BLOCKING_WAIT: 0
+TIMEOUT<span class="o">(</span>ms<span class="o">)</span>: 1800000
+USE_HIGH_PRIORITY_STREAM: 0
+<span class="o">[</span>I ProcessGroupNCCL.cpp:842] <span class="o">[</span>Rank 20] NCCL watchdog thread started!
+<span class="o">[</span>I socket.cpp:624] <span class="o">[</span>c10d - debug] The client socket will attempt to connect to an IPv6 address of <span class="o">(</span>allen.local, 32927<span class="o">)</span><span class="nb">.</span>
+<span class="o">[</span>I socket.cpp:787] <span class="o">[</span>c10d] The client socket has connected to <span class="o">[</span>allen.ece.utexas.edu]:32927 on <span class="o">[</span>johnson.ece.utexas.edu]:35840.
+<span class="o">[</span>I ProcessGroupNCCL.cpp:665] <span class="o">[</span>Rank 18] ProcessGroupNCCL initialized with following options:
+NCCL_ASYNC_ERROR_HANDLING: 1
+NCCL_DESYNC_DEBUG: 0
+NCCL_BLOCKING_WAIT: 0
+TIMEOUT<span class="o">(</span>ms<span class="o">)</span>: 1800000
+USE_HIGH_PRIORITY_STREAM: 0
+<span class="o">[</span>I ProcessGroupNCCL.cpp:842] <span class="o">[</span>Rank 18] NCCL watchdog thread started!
+| distributed init <span class="o">(</span>world_size 24, global rank 21, <span class="nb">local </span>gpu <span class="nb">id </span>5<span class="o">)</span>: <span class="nb">env</span>://
+<span class="o">[</span>I socket.cpp:624] <span class="o">[</span>c10d - debug] The client socket will attempt to connect to an IPv6 address of <span class="o">(</span>allen.local, 32927<span class="o">)</span><span class="nb">.</span>
+<span class="o">[</span>I socket.cpp:787] <span class="o">[</span>c10d] The client socket has connected to <span class="o">[</span>allen.ece.utexas.edu]:32927 on <span class="o">[</span>johnson.ece.utexas.edu]:35852.
+<span class="o">[</span>I socket.cpp:624] <span class="o">[</span>c10d - debug] The client socket will attempt to connect to an IPv6 address of <span class="o">(</span>allen.local, 32927<span class="o">)</span>./ 
+<span class="o">[</span>I socket.cpp:787] <span class="o">[</span>c10d] The client socket has connected to <span class="o">[</span>allen.ece.utexas.edu]:32927 on <span class="o">[</span>johnson.ece.utexas.edu]:35858.
+<span class="o">[</span>I ProcessGroupNCCL.cpp:665] <span class="o">[</span>Rank 21] ProcessGroupNCCL initialized with following options:
+NCCL_ASYNC_ERROR_HANDLING: 1
+</code></pre></div></div> <p><br/></p> <h1 id="reference">Reference:</h1> <ul> <li><a href="https://leimao.github.io/blog/PyTorch-Distributed-Training/">https://leimao.github.io/blog/PyTorch-Distributed-Training/</a></li> <li><a href="https://pytorch.org/tutorials/intermediate/ddp_series_multinode.html">https://pytorch.org/tutorials/intermediate/ddp_series_multinode.html</a></li> <li><a href="https://github.com/NVIDIA/nccl/issues/833">https://github.com/NVIDIA/nccl/issues/833</a></li> <li><a href="https://github.com/pytorch/pytorch/issues/79388">https://github.com/pytorch/pytorch/issues/79388</a></li> <li><a href="https://github.com/pytorch/pytorch/issues/74824#issuecomment-1500144250">https://github.com/pytorch/pytorch/issues/74824#issuecomment-1500144250</a></li> <li><a href="https://linuxconfig.org/how-to-enable-disable-firewall-on-ubuntu-20-04-lts-focal-fossa-linux">https://linuxconfig.org/how-to-enable-disable-firewall-on-ubuntu-20-04-lts-focal-fossa-linux</a></li> <li><a href="https://askubuntu.com/questions/257263/how-to-display-network-traffic-in-the-terminal">https://askubuntu.com/questions/257263/how-to-display-network-traffic-in-the-terminal</a></li> </ul>]]></content><author><name></name></author><category term="linux,"/><category term="ubuntu,"/><category term="nvidia,"/><category term="commands,"/><category term="coding,"/><category term="pytorch"/><summary type="html"><![CDATA[Distributed Training with Pytorch]]></summary></entry><entry><title type="html">Install Nvidia Docker on Ubuntu Machines</title><link href="/blog/2024/docker_install/" rel="alternate" type="text/html" title="Install Nvidia Docker on Ubuntu Machines"/><published>2024-06-25T00:00:00+00:00</published><updated>2024-06-25T00:00:00+00:00</updated><id>/blog/2024/docker_install</id><content type="html" xml:base="/blog/2024/docker_install/"><![CDATA[<h1 id="introduction">Introduction</h1> <p>To run Docker with accessibility of GPU and CUDA support, NVIDIA Docker has to be installed on the machine. Docker is a tool that encapsulates the environments, e.g, CUDA, CUDNN and all kinds of libraries and dependencies in a container without messing up the machine’s environment. This is especially beneficial when we are duplicating some methods that use other packages e.g., Tensorflow Pytorch, Keras, Caffe, MXNet., or depending on old/new CUDA and CUDNN versions.</p> <h1 id="installation">Installation</h1> <blockquote> <p>[!WARNING]<br/> Warning: we will remove the Docker originally installed on the Machines by SNAP, and re-install capable Docker using apt-get</p> </blockquote> <h2 id="step-1-remove-docker-install-from-snap">Step 1 remove docker install from SNAP</h2> <p>Remove docker</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>snap remove <span class="nt">--purge</span> docker
+2022-10-03T18:37:22Z INFO Waiting <span class="k">for</span> <span class="s2">"snap.docker.dockerd.service"</span> to stop.
+docker removed
+</code></pre></div></div> <p>To check if there is still docker installed by apt-get</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>apt-get remove docker docker-engine docker.io containerd runc
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+Package <span class="s1">'docker-engine'</span> is not installed, so not removed
+Package <span class="s1">'containerd'</span> is not installed, so not removed
+Package <span class="s1">'runc'</span> is not installed, so not removed
+Package <span class="s1">'docker'</span> is not installed, so not removed
+Package <span class="s1">'docker.io'</span> is not installed, so not removed
+0 upgraded, 0 newly installed, 0 to remove and 42 not upgraded.
+</code></pre></div></div> <h2 id="step-2-install-docker-from-apt">Step 2 Install Docker from APT</h2> <p>Follow the steps in Docker official document: https://docs.docker.com/engine/install/ubuntu/</p> <h2 id="step-3-reboot-server">Step 3 Reboot server</h2> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>reboot
+</code></pre></div></div> <h2 id="step-4-test-docker-with-sudo">Step 4 Test Docker with sudo</h2> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>service docker start
+<span class="nv">$ </span><span class="nb">sudo </span>docker run hello-world
+
+Unable to find image <span class="s1">'hello-world:latest'</span> locally
+latest: Pulling from library/hello-world
+2db29710123e: Pull <span class="nb">complete 
+</span>Digest: sha256:62af9efd515a25f84961b70f973a798d2eca956b1b2b026d0a4a63a3b0b6a3f2
+Status: Downloaded newer image <span class="k">for </span>hello-world:latest
+
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
+
+To generate this message, Docker took the following steps:
+ 1. The Docker client contacted the Docker daemon.
+ 2. The Docker daemon pulled the <span class="s2">"hello-world"</span> image from the Docker Hub.
+    <span class="o">(</span>amd64<span class="o">)</span>
+ 3. The Docker daemon created a new container from that image which runs the
+    executable that produces the output you are currently reading.
+ 4. The Docker daemon streamed that output to the Docker client, which sent it
+    to your terminal.
+
+To try something more ambitious, you can run an Ubuntu container with:
+ <span class="nv">$ </span>docker run <span class="nt">-it</span> ubuntu bash
+
+Share images, automate workflows, and more with a free Docker ID:
+ https://hub.docker.com/
+
+For more examples and ideas, visit:
+ https://docs.docker.com/get-started/
+
+</code></pre></div></div> <h2 id="step-5-install-nvidia-docker">Step 5 Install NVIDIA Docker</h2> <p>Follow the steps in NVIDIA Docker official document: https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#docker</p> <h2 id="step-6-test-nvidia-docker-with-sudo">Step 6 Test NVIDIA Docker with sudo</h2> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo  </span>docker run <span class="nt">--rm</span> <span class="nt">--gpus</span> all nvidia/cuda:11.0.3-base-ubuntu20.04 nvidia-smi
+</code></pre></div></div> <h1 id="troubleshooting">Troubleshooting</h1> <h3 id="error-response-from-daemon">Error response from daemon</h3> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo  </span>docker run <span class="nt">--rm</span> <span class="nt">--gpus</span> all nvidia/cuda:11.0.3-base-ubuntu20.04 nvidia-smi
+docker: Error response from daemon: could not <span class="k">select </span>device driver <span class="s2">""</span> with capabilities: <span class="o">[[</span>gpu]].
+</code></pre></div></div> <p>This is the Snap issue, please follow step 1. <a href="https://stackoverflow.com/questions/61876116/how-to-remove-a-snap-application-docker-completely">Reference</a>.</p> <h3 id="cannot-connect-to-the-docker-daemon">Cannot connect to the Docker daemon</h3> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>docker run hello-world
+docker: Cannot connect to the Docker daemon at unix:///var/run/docker.sock. Is the docker daemon running?.
+See <span class="s1">'docker run --help'</span><span class="nb">.</span>
+</code></pre></div></div> <p>This is the permission issue after installing Docker from apt-get. For our machine, we could just restart the docker and test it after reboot. Please see step 3 and step 4. <a href="https://stackoverflow.com/questions/44678725/cannot-connect-to-the-docker-daemon-at-unix-var-run-docker-sock-is-the-docker">Reference</a>.</p> <h1 id="reference">Reference:</h1> <ul> <li><a href="https://github.com/NVIDIA/nvidia-docker/issues/1447">https://github.com/NVIDIA/nvidia-docker/issues/1447</a></li> <li><a href="https://github.com/NVIDIA/nvidia-docker/issues/1672">https://github.com/NVIDIA/nvidia-docker/issues/1672</a></li> <li><a href="https://github.com/NVIDIA/nvidia-docker/issues/1155">https://github.com/NVIDIA/nvidia-docker/issues/1155</a></li> </ul>]]></content><author><name></name></author><category term="linux,"/><category term="ubuntu,"/><category term="docker,"/><category term="nvidia,"/><category term="commands"/><summary type="html"><![CDATA[Install Nvidia Docker on Ubuntu Machines]]></summary></entry><entry><title type="html">Create/Delete Users on Linux Machines</title><link href="/blog/2024/linux_users/" rel="alternate" type="text/html" title="Create/Delete Users on Linux Machines"/><published>2024-06-25T00:00:00+00:00</published><updated>2024-06-25T00:00:00+00:00</updated><id>/blog/2024/linux_users</id><content type="html" xml:base="/blog/2024/linux_users/"><![CDATA[<h1 id="create-users">Create Users</h1> <p>Create user with default using bash shell <code class="language-plaintext highlighter-rouge">-s</code> (<code class="language-plaintext highlighter-rouge">--shell</code>) and home directory <code class="language-plaintext highlighter-rouge">-m</code> (<code class="language-plaintext highlighter-rouge">--create-home</code>)</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>useradd <span class="nt">-m</span> <span class="nt">-s</span> /bin/bash &lt;usrname&gt;
+<span class="nv">$ </span><span class="nb">sudo </span>passwd &lt;usrname&gt;
+</code></pre></div></div> <h1 id="delete-users">Delete Users</h1> <p>Delete that user’s home directory and mail spool by using the <code class="language-plaintext highlighter-rouge">-r</code> flag with the command</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>userdel <span class="nt">-r</span> &lt;usrname&gt;
+</code></pre></div></div> <h1 id="reference">Reference:</h1> <ul> <li><a href="https://linuxize.com/post/how-to-create-users-in-linux-using-the-useradd-command/">https://linuxize.com/post/how-to-create-users-in-linux-using-the-useradd-command/</a></li> <li><a href="https://sg.godaddy.com/help/remove-a-linux-user-19158">https://sg.godaddy.com/help/remove-a-linux-user-19158</a></li> </ul>]]></content><author><name></name></author><category term="linux,"/><category term="ubuntu,"/><category term="commands"/><summary type="html"><![CDATA[Create/Delete Users on Linux Machines]]></summary></entry><entry><title type="html">Install Rootless Docker on Ubuntu Machines</title><link href="/blog/2024/rootless_docker/" rel="alternate" type="text/html" title="Install Rootless Docker on Ubuntu Machines"/><published>2024-06-25T00:00:00+00:00</published><updated>2024-06-25T00:00:00+00:00</updated><id>/blog/2024/rootless_docker</id><content type="html" xml:base="/blog/2024/rootless_docker/"><![CDATA[<h1 id="introduction">Introduction</h1> <p>Running docker usually requires root privileges. This document contains the rootless docker installation steps on Ubuntu machines. Note that the root privilege is required during the installation.</p> <h1 id="installation">Installation</h1> <h2 id="step-1-install-uidmap-sudo-required">Step 1 Install uidmap (sudo required)</h2> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>apt-get <span class="nb">install</span> <span class="nt">-y</span> uidmap
+</code></pre></div></div> <h2 id="step-2-setup-user-group-sudo-required">Step 2 Setup User group (sudo required)</h2> <p>Follow the <a href="https://rootlesscontaine.rs/getting-started/common/subuid/">document</a> to setup the user group. If <code class="language-plaintext highlighter-rouge">subuids</code> and <code class="language-plaintext highlighter-rouge">subgids</code> are not configured, you need to edit <code class="language-plaintext highlighter-rouge">/etc/subuid</code> and <code class="language-plaintext highlighter-rouge">/etc/subgid</code> directly with a text editor</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">cat</span> /etc/subuid
+user1:100000:65536
+<span class="nv">$ </span><span class="nb">cat</span> /etc/subgids
+user1:100000:65536
+</code></pre></div></div> <h2 id="step-3-configure-nvidia-docker-for-user-group-sudo-required">Step 3 Configure NVIDIA Docker for User Group (sudo required)</h2> <blockquote> <p>[!WARNING]<br/> Warning: the side effect of the setting is that using nvidia docker with sudo will cause error: Failed to initialize NVML: Unknown Error.</p> </blockquote> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span><span class="nb">sudo </span>vim /etc/nvidia-container-runtime/config.toml
+<span class="c"># set no-cgroups = true</span>
+no-cgroups <span class="o">=</span> <span class="nb">true</span>
+</code></pre></div></div> <h2 id="step-4-setup-rootless-docker">Step 4. Setup Rootless Docker</h2> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>dockerd-rootless-setuptool.sh <span class="nb">install</span>
+</code></pre></div></div> <h2 id="step-5-restart-docker">Step 5. Restart Docker</h2> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>systemctl <span class="nt">--user</span> start docker
+<span class="nv">$ </span>systemctl <span class="nt">--user</span> <span class="nb">enable </span>docker
+<span class="c"># export DOCKER_HOST or add to ~/.bashrc and source ~/.bashrc</span>
+<span class="nv">$ </span><span class="nb">export </span><span class="nv">DOCKER_HOST</span><span class="o">=</span>unix://<span class="nv">$XDG_RUNTIME_DIR</span>/docker.sock
+</code></pre></div></div> <h2 id="step-6-test-docker-without-sudo">Step 6. Test Docker without Sudo</h2> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># without sudo to run docker</span>
+<span class="nv">$ </span>docker run hello-world
+<span class="c"># without sudo to run docker and access gpu </span>
+<span class="nv">$ </span>docker run <span class="nt">--rm</span> <span class="nt">--gpus</span> all nvidia/cuda:11.0.3-base-ubuntu20.04 nvidia-smi
+</code></pre></div></div> <h1 id="reference">Reference:</h1> <ul> <li><a href="https://github.com/NVIDIA/nvidia-docker/issues/1447">https://github.com/NVIDIA/nvidia-docker/issues/1447</a></li> <li><a href="https://github.com/NVIDIA/nvidia-docker/issues/1672">https://github.com/NVIDIA/nvidia-docker/issues/1672</a></li> <li><a href="https://github.com/NVIDIA/nvidia-docker/issues/1155">https://github.com/NVIDIA/nvidia-docker/issues/1155</a></li> </ul>]]></content><author><name></name></author><category term="linux,"/><category term="ubuntu,"/><category term="docker,"/><category term="nvidia,"/><category term="commands"/><summary type="html"><![CDATA[Install Rootless Docker on Ubuntu Machines]]></summary></entry></feed>

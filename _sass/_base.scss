@@ -53,12 +53,26 @@ blockquote {
 
 // Caption
 
-.caption {
-  font-size: 0.875rem;
+.post-title {
+  font-family: "Times New Roman", Times, serif;
   margin-top: 0.75rem;
   margin-bottom: 1.5rem;
   text-align: center;
 }
+
+.authors {
+  font-size: 1.2rem;
+  font-family: "Times New Roman", Times, serif;
+  text-align: center;
+}
+
+.caption {
+  font-size: 1.0 rem;
+  margin-top: 0.75rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
 
 // Card
 
@@ -71,6 +85,7 @@ blockquote {
 
   .card-title {
     color: var(--global-text-color);
+    text-align: center;
   }
 
   .card-item {
